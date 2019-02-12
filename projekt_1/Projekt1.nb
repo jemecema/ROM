@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     19610,        565]
-NotebookOptionsPosition[     17436,        486]
-NotebookOutlinePosition[     17858,        503]
-CellTagsIndexPosition[     17815,        500]
+NotebookDataLength[    103220,       2371]
+NotebookOptionsPosition[     96649,       2138]
+NotebookOutlinePosition[     97068,       2155]
+CellTagsIndexPosition[     97025,       2152]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -27,8 +27,18 @@ Cell["PRAVILNI VE\[CapitalCHacek]KOTNIKI IN PLATONSKA TELESA", "Section",
 
 Cell[CellGroupData[{
 
-Cell["Pravilni ve\[CHacek]kotniki", "Subsection",
- CellChangeTimes->{{3.755609289709775*^9, 3.755609296854061*^9}}],
+Cell["Pravilni ve\[CHacek]kotnik", "Subsection",
+ CellChangeTimes->{{3.758970762046566*^9, 3.7589707700963635`*^9}}],
+
+Cell["\<\
+Pravilni mnogokotnik ali pravilni ve\[CHacek]kotnik je mnogokotnik, ki ima \
+vse stranice enako dolge in vse kote med seboj skladne. 
+Naslednja funkcija skonstruira poljuben mnogokotnik, ki mu podamo \
+\[SHacek]tevilo stranic in dol\[ZHacek]ino ene stranice. S pomo\[CHacek]jo \
+teh podatkov lahko izra\[CHacek]unamo tudi obseg, \[SHacek]tevilo diagonal in \
+velikost notranjih kotov poljubnega mnogokotnika.\
+\>", "Text",
+ CellChangeTimes->{{3.7588713539814014`*^9, 3.7588714532680087`*^9}}],
 
 Cell[BoxData[{
  RowBox[{
@@ -71,15 +81,107 @@ Cell[BoxData[{
    RowBox[{"p", "[", 
     RowBox[{"[", "1", "]"}], "]"}], " ", "*", " ", 
    RowBox[{"p", "[", 
-    RowBox[{"[", "2", "]"}], "]"}]}]}]}], "Code",
+    RowBox[{"[", "2", "]"}], "]"}]}]}], "\n", 
+ RowBox[{
+  RowBox[{"\[CapitalSHacek]tDiagonal", "[", "p__PravilniNKotnik", "]"}], " ", 
+  ":=", " ", 
+  RowBox[{
+   RowBox[{"p", "[", 
+    RowBox[{"[", "1", "]"}], "]"}], " ", "*", " ", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"p", "[", 
+       RowBox[{"[", "1", "]"}], "]"}], " ", "-", " ", "3"}], ")"}], " ", "/", 
+    " ", "2"}]}]}], "\n", 
+ RowBox[{
+  RowBox[{"NotranjiKot", "[", "p__PravilniNKotnik", "]"}], " ", ":=", " ", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"p", "[", 
+      RowBox[{"[", "1", "]"}], "]"}], " ", "-", " ", "2"}], ")"}], " ", "*", 
+   " ", 
+   RowBox[{"180", " ", "/", " ", 
+    RowBox[{"p", "[", 
+     RowBox[{"[", "1", "]"}], "]"}]}]}]}]}], "Code",
  CellChangeTimes->{
   3.7556219199571776`*^9, {3.7556649609634047`*^9, 3.7556650074997563`*^9}, {
-   3.755667613474732*^9, 3.7556676279599037`*^9}}],
+   3.755667613474732*^9, 3.7556676279599037`*^9}, {3.7588714589727273`*^9, 
+   3.7588715682372828`*^9}, {3.7588718708787727`*^9, 
+   3.7588719086942415`*^9}, {3.7588719543636446`*^9, 3.75887196091879*^9}, {
+   3.7589449893028193`*^9, 3.7589449898090086`*^9}}],
+
+Cell["\<\
+V nadaljevanju bom predstavila nekaj pravilnih ve\[CHacek]kotnikov tako, da \
+jih bom narisala, izra\[CHacek]unala njihov obseg, \[SHacek]tevilo diagonal, \
+velikost notranjih kotov ter vi\[SHacek]ino in plo\[SHacek]\[CHacek]ino.\
+\>", "Text",
+ CellChangeTimes->{{3.758871603877009*^9, 3.758871671260746*^9}}],
 
 Cell[CellGroupData[{
 
 Cell["Enakostrani\[CHacek]ni trikotnik", "Subsubsection",
  CellChangeTimes->{{3.75560968941352*^9, 3.7556096995272675`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"p3", " ", "=", " ", 
+   RowBox[{"PravilniNKotnik", "[", 
+    RowBox[{"3", ",", " ", "2"}], "]"}]}], ";"}]], "Code",
+ CellChangeTimes->{3.758871708008958*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Narisi", "[", "p3", "]"}]], "Input",
+ CellChangeTimes->{{3.758871720803156*^9, 3.7588717353060255`*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[
+  LineBox[NCache[{{2, 0}, {-1, 3^Rational[1, 2]}, {-1, -3^Rational[1, 2]}, {2,
+      0}}, {{2, 0}, {-1, 1.7320508075688772`}, {-1, -1.7320508075688772`}, {2,
+      0}}]]]], "Output",
+ CellChangeTimes->{3.7588717361714754`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Obseg", "[", "p3", "]"}]], "Input",
+ CellChangeTimes->{{3.7588718281246634`*^9, 3.7588718447337413`*^9}, {
+  3.758871998250886*^9, 3.758872000141838*^9}}],
+
+Cell[BoxData["6"], "Output",
+ CellChangeTimes->{3.7588718470141516`*^9, 3.758871931230857*^9, 
+  3.7588719692773447`*^9, 3.7588720019547205`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\[CapitalSHacek]tDiagonal", "[", "p3", "]"}]], "Input",
+ CellChangeTimes->{{3.7588720100150456`*^9, 3.7588720112466288`*^9}}],
+
+Cell[BoxData["0"], "Output",
+ CellChangeTimes->{3.7588720139164534`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"NotranjiKot", "[", "p3", "]"}]], "Input"],
+
+Cell[BoxData["60"], "Output",
+ CellChangeTimes->{3.758872018593396*^9}]
+}, Open  ]],
+
+Cell["\<\
+Poleg zgornjih lastnosti lahko enakostrani\[CHacek]nemu trikotniku izra\
+\[CHacek]unamo tudi vi\[SHacek]ino, ter s pomo\[CHacek]jo vi\[SHacek]ine tudi \
+plo\[SHacek]\[CHacek]ino trikotnika.\
+\>", "Text",
+ CellChangeTimes->{{3.758872150308163*^9, 3.7588722026938543`*^9}}],
 
 Cell[BoxData[{
  RowBox[{
@@ -105,78 +207,24 @@ Cell[BoxData[{
 
 Cell[CellGroupData[{
 
-Cell[BoxData[{
- RowBox[{
-  RowBox[{"p3", " ", "=", " ", 
-   RowBox[{"PravilniNKotnik", "[", 
-    RowBox[{"3", ",", " ", "2"}], "]"}]}], ";"}], "\n", 
- RowBox[{"Obseg", "[", "p3", "]"}], "\n", 
- RowBox[{"V", " ", "=", " ", 
-  RowBox[{"Vi\[SHacek]inaTrikotnika", "[", "p3", "]"}]}], "\n", 
- RowBox[{"P", " ", "=", " ", 
-  RowBox[{"Plo\[SHacek]\[CHacek]inaTrikotnika", "[", "p3", "]"}]}]}], "Code",
- CellChangeTimes->{{3.7556111773564234`*^9, 3.755611181404393*^9}, {
-  3.7556143959319735`*^9, 3.755614400853662*^9}, {3.7556144617823353`*^9, 
-  3.7556144706357784`*^9}, {3.7556218658695116`*^9, 3.755621884223256*^9}, {
-  3.755621991256562*^9, 3.755621991850664*^9}, {3.7556650175773993`*^9, 
-  3.7556650742716494`*^9}, {3.755665853246683*^9, 3.755665901224845*^9}, {
-  3.7556661231825647`*^9, 3.75566629034468*^9}, {3.755666479236576*^9, 
-  3.755666495864153*^9}}],
-
-Cell[BoxData["6"], "Output",
- CellChangeTimes->{3.75566507756666*^9, 3.7556662523438516`*^9, 
-  3.755666291593681*^9, 3.755666489472002*^9, 3.755881608807726*^9}],
+Cell[BoxData[
+ RowBox[{"Vi\[SHacek]inaTrikotnika", "[", "p3", "]"}]], "Input",
+ CellChangeTimes->{{3.7589448414671617`*^9, 3.7589448571550117`*^9}}],
 
 Cell[BoxData[
  SqrtBox["3"]], "Output",
- CellChangeTimes->{3.75566507756666*^9, 3.7556662523438516`*^9, 
-  3.755666291593681*^9, 3.755666489472002*^9, 3.7558816088137164`*^9}],
-
-Cell[BoxData[
- SqrtBox["3"]], "Output",
- CellChangeTimes->{3.75566507756666*^9, 3.7556662523438516`*^9, 
-  3.755666291593681*^9, 3.755666489472002*^9, 3.755881608818144*^9}]
+ CellChangeTimes->{3.7589448604018836`*^9}]
 }, Open  ]],
-
-Cell[BoxData[
- RowBox[{
-  RowBox[{"NarisiVisino", "[", "p__V", "]"}], " ", ":=", " ", 
-  RowBox[{"Graphics", "[", "\n", "\t", 
-   RowBox[{"Line", "[", 
-    RowBox[{
-     RowBox[{"{", 
-      RowBox[{
-       RowBox[{"p", "[", 
-        RowBox[{"[", "2", "]"}], "]"}], ",", " ", "0"}], "}"}], ",", "\n", 
-     "\t\t\t", 
-     RowBox[{
-      RowBox[{"p", "[", 
-       RowBox[{"[", "2", "]"}], "]"}], " ", "*", " ", 
-      RowBox[{"Sin", "[", 
-       RowBox[{
-        RowBox[{"(", 
-         RowBox[{"2", "*", "Pi", " ", "*", " ", "i"}], ")"}], " ", "/", " ", 
-        RowBox[{"p", "[", 
-         RowBox[{"[", "1", "]"}], "]"}]}], "]"}]}]}], "\n", "\t\t\t", "]"}], 
-   "\n", "\t\t\t", "]"}]}]], "Code",
- CellChangeTimes->{{3.755666421985324*^9, 3.755666458371142*^9}, {
-  3.7556665067562695`*^9, 3.755666514515133*^9}, {3.755667927460841*^9, 
-  3.7556679667663546`*^9}, {3.7556680011099606`*^9, 3.75566804953074*^9}, {
-  3.7558837155369563`*^9, 3.755883716143833*^9}}],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"Narisi", "[", "p3", "]"}]], "Input",
- CellChangeTimes->{{3.75562188884161*^9, 3.755621901639329*^9}}],
+ RowBox[{"Plo\[SHacek]\[CHacek]inaTrikotnika", "[", "p3", "]"}]], "Input",
+ CellChangeTimes->{{3.758944863257358*^9, 3.7589448751272745`*^9}}],
 
 Cell[BoxData[
- GraphicsBox[
-  LineBox[NCache[{{2, 0}, {-1, 3^Rational[1, 2]}, {-1, -3^Rational[1, 2]}, {2,
-      0}}, {{2, 0}, {-1, 1.7320508075688772`}, {-1, -1.7320508075688772`}, {2,
-      0}}]]]], "Output",
- CellChangeTimes->{{3.7556219034686213`*^9, 3.7556219312633142`*^9}, {
-  3.755621974942091*^9, 3.7556219974501247`*^9}}]
+ SqrtBox["3"]], "Output",
+ CellChangeTimes->{3.7589448765054674`*^9}]
 }, Open  ]]
 }, Open  ]],
 
@@ -208,6 +256,58 @@ Cell[BoxData[
   3.7556215234946938`*^9, {3.7556215987388926`*^9, 3.755621638918315*^9}, 
    3.755621671690152*^9, 3.7556217328490086`*^9, {3.7556218098418827`*^9, 
    3.755621832527393*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Obseg", "[", "p4", "]"}]], "Input",
+ CellChangeTimes->{{3.758944913819944*^9, 3.7589449145983725`*^9}}],
+
+Cell[BoxData["8"], "Output",
+ CellChangeTimes->{{3.758944909171336*^9, 3.7589449160620317`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\[CapitalSHacek]tDiagonal", "[", "p4", "]"}]], "Input",
+ CellChangeTimes->{{3.7589449462247367`*^9, 3.7589449471502604`*^9}}],
+
+Cell[BoxData["2"], "Output",
+ CellChangeTimes->{3.758944948591817*^9, 3.7589450003963194`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"NotranjiKot", "[", "p4", "]"}]], "Input",
+ CellChangeTimes->{{3.7589450224263535`*^9, 3.758945022886452*^9}}],
+
+Cell[BoxData["90"], "Output",
+ CellChangeTimes->{3.7589450254911594`*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+  "Plo\[SHacek]\[CHacek]inaKvadrata", "[", "p__PravilniNKotnik", "]"}], " ", ":=",
+   " ", 
+  RowBox[{
+   RowBox[{"p", "[", 
+    RowBox[{"[", "2", "]"}], "]"}], " ", "*", " ", 
+   RowBox[{"p", "[", 
+    RowBox[{"[", "2", "]"}], "]"}]}]}]], "Code",
+ CellChangeTimes->{{3.758945037702486*^9, 3.7589451144679384`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Plo\[SHacek]\[CHacek]inaKvadrata", "[", "p4", "]"}]], "Input",
+ CellChangeTimes->{{3.7589450942606554`*^9, 3.758945100901162*^9}}],
+
+Cell[BoxData["4"], "Output",
+ CellChangeTimes->{{3.7589451026179743`*^9, 3.758945118767147*^9}}]
 }, Open  ]]
 }, Open  ]],
 
@@ -246,6 +346,36 @@ Cell[BoxData[
      1.1755705045849463`}, {-1.618033988749895, -1.1755705045849463`}, {
      0.6180339887498949, -1.902113032590307}, {2, 0}}]]]], "Output",
  CellChangeTimes->{3.7556257697359786`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Obseg", "[", "p5", "]"}]], "Input",
+ CellChangeTimes->{{3.7589456337306585`*^9, 3.7589456392743073`*^9}}],
+
+Cell[BoxData["10"], "Output",
+ CellChangeTimes->{3.758945640347435*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\[CapitalSHacek]tDiagonal", "[", "p5", "]"}]], "Input",
+ CellChangeTimes->{{3.7589456590481367`*^9, 3.758945660259885*^9}}],
+
+Cell[BoxData["5"], "Output",
+ CellChangeTimes->{3.7589456614164286`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"NotranjiKot", "[", "p5", "]"}]], "Input",
+ CellChangeTimes->{{3.7589456854450336`*^9, 3.758945686449201*^9}}],
+
+Cell[BoxData["108"], "Output",
+ CellChangeTimes->{3.758945687749793*^9}]
 }, Open  ]]
 }, Open  ]],
 
@@ -285,27 +415,28 @@ Cell[BoxData[{
          RowBox[{"i", ",", " ", "0", ",", " ", "n"}], "}"}]}], "]"}], "]"}], 
      "}"}], "]"}], ",", " ", 
    RowBox[{"{", 
-    RowBox[{"n", ",", " ", "3", ",", " ", "20"}], "}"}]}], "]"}]}], "Code",
+    RowBox[{"n", ",", " ", "3", ",", " ", "20", ",", " ", "1"}], "}"}]}], 
+  "]"}]}], "Code",
  CellChangeTimes->{{3.7556205261886873`*^9, 3.7556205443626213`*^9}, {
   3.7556245676282096`*^9, 3.755624613957133*^9}, {3.755624653504676*^9, 
   3.7556247197289124`*^9}, {3.7556261562158675`*^9, 3.755626245553712*^9}, {
   3.755626339919321*^9, 3.7556263602490263`*^9}, {3.755668197594198*^9, 
-  3.755668212548174*^9}}],
+  3.755668212548174*^9}, {3.758992324367055*^9, 3.7589923251512036`*^9}}],
 
 Cell[BoxData[
  TagBox[
   StyleBox[
-   DynamicModuleBox[{$CellContext`n$$ = 3., Typeset`show$$ = True, 
+   DynamicModuleBox[{$CellContext`n$$ = 3, Typeset`show$$ = True, 
     Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
     Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
     "\"untitled\"", Typeset`specs$$ = {{
-      Hold[$CellContext`n$$], 3, 20}}, Typeset`size$$ = {360., {204., 209.}}, 
-    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
-    True, $CellContext`n$393$$ = 0}, 
+      Hold[$CellContext`n$$], 3, 20, 1}}, Typeset`size$$ = {
+    360., {204., 209.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`n$2269$$ = 0}, 
     DynamicBox[Manipulate`ManipulateBoxes[
      1, StandardForm, "Variables" :> {$CellContext`n$$ = 3}, 
       "ControllerVariables" :> {
-        Hold[$CellContext`n$$, $CellContext`n$393$$, 0]}, 
+        Hold[$CellContext`n$$, $CellContext`n$2269$$, 0]}, 
       "OtherVariables" :> {
        Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
         Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
@@ -317,7 +448,7 @@ Cell[BoxData[
             Cos[(2 Pi $CellContext`i)/$CellContext`n$$], $CellContext`d 
             Sin[(2 Pi $CellContext`i)/$CellContext`n$$]}, {$CellContext`i, 
             0, $CellContext`n$$}]]}], 
-      "Specifications" :> {{$CellContext`n$$, 3, 20}}, "Options" :> {}, 
+      "Specifications" :> {{$CellContext`n$$, 3, 20, 1}}, "Options" :> {}, 
       "DefaultOptions" :> {}],
      ImageSizeCache->{411., {251., 257.}},
      SingleEvaluation->True],
@@ -334,19 +465,159 @@ Cell[BoxData[
   3.755624722015577*^9, {3.7556262324097633`*^9, 3.755626247144096*^9}, {
    3.755626345353798*^9, 3.7556263621904554`*^9}, {3.7556649205845532`*^9, 
    3.755664920784938*^9}, 3.7556682068313866`*^9, 3.755669955776045*^9, {
-   3.755881609148904*^9, 3.755881609303158*^9}}]
+   3.755881609148904*^9, 3.755881609303158*^9}, 3.758871571726679*^9, 
+   3.758944800693514*^9, 3.7589702748609066`*^9, {3.758992297582162*^9, 
+   3.7589922977934055`*^9}, 3.758992327909711*^9}]
 }, Open  ]]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
-Cell["Platonska telesa", "Subsubsection",
- CellChangeTimes->{{3.7556264100031867`*^9, 3.7556264270579023`*^9}, {
-  3.755883276410462*^9, 3.7558832817952704`*^9}, {3.7558834369054527`*^9, 
-  3.755883438489526*^9}}],
+Cell["V\[CHacek]rtana in o\[CHacek]rtana kro\[ZHacek]nica", "Subsubsection",
+ CellChangeTimes->{{3.758945800825514*^9, 3.758945810143106*^9}}],
 
-Cell["Tetraeder", "Text",
- CellChangeTimes->{{3.755626453345192*^9, 3.7556264568133545`*^9}}],
+Cell["\<\
+Vsakemu pravilnemu ve\[CHacek]kotniku lahko v\[CHacek]rtamo in \
+o\[CHacek]rtamo kro\[ZHacek]nico. Spodnje funkcije izra\[CHacek]unajo polmer \
+o\[CHacek]rtane in v\[CHacek]rtane kro\[ZHacek]nice za poljuben \
+ve\[CHacek]kotnik.\
+\>", "Text",
+ CellChangeTimes->{{3.7589979824740305`*^9, 3.7589980592063313`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"PolmerO\[CHacek]rtane", "[", "p__PravilniNKotnik", "]"}], " ", ":=",
+   " ", 
+  RowBox[{
+   RowBox[{"p", "[", 
+    RowBox[{"[", "2", "]"}], "]"}], " ", "/", " ", 
+   RowBox[{"(", 
+    RowBox[{"2", "*", 
+     RowBox[{"Sin", "[", 
+      RowBox[{"180", " ", 
+       RowBox[{"Degree", "/", 
+        RowBox[{"p", "[", 
+         RowBox[{"[", "1", "]"}], "]"}]}]}], "]"}]}], ")"}]}]}], "\n", 
+ RowBox[{
+  RowBox[{"PolmerV\[CHacek]rtane", "[", "p__PravilniNKotnik", "]"}], " ", ":=",
+   " ", 
+  RowBox[{
+   RowBox[{"p", "[", 
+    RowBox[{"[", "2", "]"}], "]"}], " ", "/", " ", 
+   RowBox[{"(", 
+    RowBox[{"2", "*", 
+     RowBox[{"Tan", "[", 
+      RowBox[{"180", " ", 
+       RowBox[{"Degree", "/", 
+        RowBox[{"p", "[", 
+         RowBox[{"[", "1", "]"}], "]"}]}]}], "]"}]}], ")"}]}]}]}], "Code",
+ CellChangeTimes->{{3.7589924061339083`*^9, 3.758992466076108*^9}, {
+  3.758992559256956*^9, 3.7589925692908*^9}, {3.758992604477543*^9, 
+  3.7589928305901666`*^9}, {3.758992918377287*^9, 3.7589929235592012`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"PolmerO\[CHacek]rtane", "[", "p3", "]"}]], "Input",
+ CellChangeTimes->{{3.7589928506254463`*^9, 3.758992857229531*^9}}],
+
+Cell[BoxData[
+ FractionBox["2", 
+  SqrtBox["3"]]], "Output",
+ CellChangeTimes->{3.758992858920166*^9, 3.7589929289796705`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"PolmerO\[CHacek]rtane", "[", "p4", "]"}]], "Input",
+ CellChangeTimes->{{3.7589929803570967`*^9, 3.758992988836445*^9}}],
+
+Cell[BoxData[
+ SqrtBox["2"]], "Output",
+ CellChangeTimes->{3.7589929898822556`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"PolmerO\[CHacek]rtane", "[", "p5", "]"}]], "Input",
+ CellChangeTimes->{{3.758993266246359*^9, 3.758993294502426*^9}}],
+
+Cell[BoxData[
+ FractionBox["1", 
+  SqrtBox[
+   RowBox[{
+    FractionBox["5", "8"], "-", 
+    FractionBox[
+     SqrtBox["5"], "8"]}]]]], "Output",
+ CellChangeTimes->{{3.758993283972062*^9, 3.75899329756157*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"PolmerV\[CHacek]rtane", "[", "p3", "]"}]], "Input",
+ CellChangeTimes->{{3.75899288027907*^9, 3.758992891335471*^9}}],
+
+Cell[BoxData[
+ FractionBox["1", 
+  SqrtBox["3"]]], "Output",
+ CellChangeTimes->{3.758992892416531*^9, 3.758992932201044*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"PolmerV\[CHacek]rtane", "[", "p4", "]"}]], "Input",
+ CellChangeTimes->{{3.7589933124126053`*^9, 3.7589933810507126`*^9}}],
+
+Cell[BoxData["1"], "Output",
+ CellChangeTimes->{3.758993410225769*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"PolmerV\[CHacek]rtane", "[", "p5", "]"}]], "Input",
+ CellChangeTimes->{{3.7589934154841204`*^9, 3.758993432092778*^9}}],
+
+Cell[BoxData[
+ FractionBox["1", 
+  SqrtBox[
+   RowBox[{"5", "-", 
+    RowBox[{"2", " ", 
+     SqrtBox["5"]}]}]]]], "Output",
+ CellChangeTimes->{3.758993433592022*^9}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Platonska telesa", "Subsection",
+ CellChangeTimes->{{3.7589710018651485`*^9, 3.758971006196336*^9}}],
+
+Cell["\<\
+Platonsko telo je telo, katerega stranske ploskve so skladni pravilni \
+mnogokotniki z zna\[CHacek]ilnostjo, da se v vsakem ogli\[SHacek]\[CHacek]u \
+stika isto \[SHacek]tevilo stranskih ploskev. Najve\[CHacek]ja zanimivost \
+Platonskih teles je, da jih obstaja le pet.\
+\>", "Text",
+ CellChangeTimes->{{3.7589985190327983`*^9, 3.758998616943606*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Tetraeder", "Subsubsection",
+ CellChangeTimes->{{3.7589710175506444`*^9, 3.758971021501782*^9}}],
+
+Cell["\<\
+Tetraeder je tristrana piramida. Dobimo ga, \[CHacek]e skupaj sestavimo \
+\[SHacek]tiri enakostrani\[CHacek]ne trikotnike.\
+\>", "Text",
+ CellChangeTimes->{{3.758998654987234*^9, 3.758998840132824*^9}, {
+  3.7589988843399906`*^9, 3.758998891533504*^9}, {3.7589992099434395`*^9, 
+  3.7589992603091726`*^9}}],
 
 Cell[CellGroupData[{
 
@@ -373,18 +644,49 @@ Cell[BoxData[
 Cell[BoxData[
  Graphics3DBox[TetrahedronBox[{{1, 0, 0}, {1, 0, 1}, {1, 1, 1}, {0, 0, 1}}],
   ImageSize->{370.48098370769793`, 369.4136043795057},
-  ImageSizeRaw->Automatic,
-  ViewPoint->{0.486194074451944, -3.3453348895904944`, 0.1494984898130107},
-  ViewVertical->{0.39888862237099965`, -0.5056899338629639, 
-   0.764961147858267}]], "Output",
+  ViewPoint->{1.439845342390236, -2.5963611473517783`, 1.6235005951706034`},
+  ViewVertical->{0.40376720024166024`, 0.025445736385639073`, 
+   0.9145078252857128}]], "Output",
  CellChangeTimes->{
   3.7558839887177763`*^9, 3.755884033522787*^9, 3.7558841388265786`*^9, {
    3.7558842249769106`*^9, 3.755884250367444*^9}, {3.7558844543180757`*^9, 
-   3.7558844822032146`*^9}, 3.755884512761841*^9, 3.755884590375504*^9}]
+   3.7558844822032146`*^9}, 3.755884512761841*^9, 3.755884590375504*^9, 
+   3.758871572071901*^9, 3.7589448010898604`*^9, 3.758970275257235*^9, 
+   3.758992297676403*^9}]
 }, Open  ]],
 
-Cell["Kocka", "Text",
- CellChangeTimes->{{3.755883305445756*^9, 3.755883328503253*^9}}],
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"PolyhedronData", "[", 
+  RowBox[{"\"\<Tetrahedron\>\"", ",", "\"\<NetImage\>\""}], "]"}]], "Code",
+ CellChangeTimes->{{3.759001142279614*^9, 3.7590011691135283`*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[
+  {RGBColor[1, 1, 0.85], EdgeForm[GrayLevel[0]], 
+   GraphicsComplexBox[
+    NCache[{{0, 0}, {Rational[1, 2], Rational[1, 2] 3^Rational[1, 2]}, {1, 
+      0}, {1, 3^Rational[1, 2]}, {
+      Rational[3, 2], Rational[1, 2] 3^Rational[1, 2]}, {2, 0}}, {{0, 0}, {
+      0.5, 0.8660254037844386}, {1, 0}, {1, 1.7320508075688772`}, {1.5, 
+      0.8660254037844386}, {2, 0}}], 
+    PolygonBox[{{1, 3, 2}, {4, 2, 5}, {3, 5, 2}, {5, 3, 6}}]]}]], "Output",
+ CellChangeTimes->{{3.759001155883614*^9, 3.759001171460783*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Kocka", "Subsubsection",
+ CellChangeTimes->{{3.758971031079406*^9, 3.7589710325346546`*^9}}],
+
+Cell["\<\
+Kocka ali heksaeder ima za osnovno ploskev kvadrat. Da lahko sestavimo kocko \
+potrebujemo 6 kvadratov.\
+\>", "Text",
+ CellChangeTimes->{{3.7589991110389557`*^9, 3.758999185481567*^9}, 
+   3.7589992789253783`*^9}],
 
 Cell[CellGroupData[{
 
@@ -394,12 +696,46 @@ Cell[BoxData[
  CellChangeTimes->{{3.7558846099332905`*^9, 3.7558846335057516`*^9}}],
 
 Cell[BoxData[
- Graphics3DBox[CuboidBox[{0, 0, 0}]]], "Output",
- CellChangeTimes->{3.7558846346308584`*^9}]
+ Graphics3DBox[CuboidBox[{0, 0, 0}],
+  ImageSize->{377.12682826051264`, 406.3057167919351},
+  ViewPoint->{1.7534314815934726`, -1.909904284990006, 2.1743375224499375`},
+  ViewVertical->{-0.07049597966173195, 0.02341500374941817, 
+   0.9972372107231796}]], "Output",
+ CellChangeTimes->{3.7558846346308584`*^9, 3.7588715720987844`*^9, 
+  3.75894480111856*^9, 3.7589702753102837`*^9, 3.758992297705702*^9}]
 }, Open  ]],
 
-Cell["Oktaeder", "Text",
- CellChangeTimes->{{3.7558833796236787`*^9, 3.7558833820627413`*^9}}],
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"PolyhedronData", "[", 
+  RowBox[{"\"\<Cube\>\"", ",", "\"\<NetImage\>\""}], "]"}]], "Code",
+ CellChangeTimes->{{3.7590011895034313`*^9, 3.7590012028220954`*^9}, {
+  3.759001239429513*^9, 3.7590012474124966`*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[
+  {RGBColor[1, 1, 0.85], EdgeForm[GrayLevel[0]], 
+   GraphicsComplexBox[{{0, 1}, {0, 2}, {1, 0}, {1, 1}, {1, 2}, {1, 3}, {2, 
+    0}, {2, 1}, {2, 2}, {2, 3}, {3, 1}, {3, 2}, {4, 1}, {4, 2}}, 
+    PolygonBox[{{5, 4, 8, 9}, {6, 5, 9, 10}, {2, 1, 4, 5}, {4, 3, 7, 8}, {9, 
+     8, 11, 12}, {12, 11, 13, 14}}]]}]], "Output",
+ CellChangeTimes->{
+  3.7590012052355175`*^9, {3.7590012421983128`*^9, 3.7590012505492315`*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Oktaeder", "Subsubsection",
+ CellChangeTimes->{{3.758971043904279*^9, 3.7589710481624975`*^9}}],
+
+Cell["\<\
+Oktaeder izgleda kot dve tristrani piramidi, ki bi jim eno ploskev prilepili \
+skupaj. Tako da zanj potrebujemo 8 enakostrani\[CHacek]nih trikotnikov.\
+\>", "Text",
+ CellChangeTimes->{{3.758999299467111*^9, 3.75899935589293*^9}, {
+  3.758999399886429*^9, 3.7589994166865807`*^9}}],
 
 Cell[CellGroupData[{
 
@@ -468,25 +804,1341 @@ Cell[BoxData[
    Polygon3DBox[{{4, 5, 6}, {4, 6, 2}, {4, 2, 1}, {4, 1, 5}, {5, 1, 3}, {5, 3,
      6}, {3, 1, 2}, {6, 3, 2}}]],
   ImageSize->{402.5251593870056, 255.52684888940064`},
-  ImageSizeRaw->Automatic,
   ViewPoint->{-2.757854449808785, 1.9585718486925496`, 0.09074771170084672},
   ViewVertical->{-0.46894037946629813`, 0.32274665753644877`, 
    1.1626947282542008`}]], "Output",
- CellChangeTimes->{3.755883475912275*^9}]
+ CellChangeTimes->{3.755883475912275*^9, 3.7588715721368704`*^9, 
+  3.7589448011706114`*^9, 3.7589702753598804`*^9, 3.7589922977423162`*^9}]
 }, Open  ]],
 
-Cell["Ikozaeder", "Text",
- CellChangeTimes->{{3.755883389957573*^9, 3.755883394204867*^9}}],
+Cell[CellGroupData[{
 
-Cell["Dodekaeder", "Text",
- CellChangeTimes->{{3.7558834073927727`*^9, 3.7558834109288387`*^9}}]
+Cell[BoxData[
+ RowBox[{"PolyhedronData", "[", 
+  RowBox[{"\"\<Octahedron\>\"", ",", "\"\<NetImage\>\""}], "]"}]], "Code",
+ CellChangeTimes->{{3.759001271628153*^9, 3.7590012796044407`*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[
+  {RGBColor[1, 1, 0.85], EdgeForm[GrayLevel[0]], 
+   GraphicsComplexBox[
+    NCache[{{2, 0}, {Rational[1, 2], Rational[1, 2] 3^Rational[1, 2]}, {
+      Rational[3, 2], Rational[1, 2] 3^Rational[1, 2]}, {
+      Rational[5, 2], Rational[1, 2] 3^Rational[1, 2]}, {
+      Rational[7, 2], Rational[1, 2] 3^Rational[1, 2]}, {
+      0, 3^Rational[1, 2]}, {1, 3^Rational[1, 2]}, {2, 3^Rational[1, 2]}, {
+      3, 3^Rational[1, 2]}, {
+      Rational[3, 2], Rational[3, 2] 3^Rational[1, 2]}}, {{2, 0}, {0.5, 
+      0.8660254037844386}, {1.5, 0.8660254037844386}, {2.5, 
+      0.8660254037844386}, {3.5, 0.8660254037844386}, {
+      0, 1.7320508075688772`}, {1, 1.7320508075688772`}, {
+      2, 1.7320508075688772`}, {3, 1.7320508075688772`}, {1.5, 
+      2.598076211353316}}], 
+    PolygonBox[{{7, 6, 2}, {3, 7, 2}, {8, 7, 3}, {8, 10, 7}, {4, 3, 1}, {4, 8,
+      3}, {9, 8, 4}, {5, 9, 4}}]]}]], "Output",
+ CellChangeTimes->{3.759001283387374*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Ikozaeder", "Subsubsection",
+ CellChangeTimes->{{3.758971057230487*^9, 3.7589710598135204`*^9}}],
+
+Cell["\<\
+Zanimivo je da najve\[CHacek] obstoje\[CHacek]ih platonskih teles sestavljajo \
+enakostrani\[CHacek]ni trikotniki. Eden izmed teh je tudi ikozaeder, za \
+katerega potrebujemo kar 20 enakostrani\[CHacek]nih trikotikov.\
+\>", "Text",
+ CellChangeTimes->{{3.7589994447956696`*^9, 3.758999512607197*^9}, 
+   3.758999642373635*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"PolyhedronData", "[", "\"\<Icosahedron\>\"", "]"}]], "Code",
+ CellChangeTimes->{{3.7589975889818697`*^9, 3.758997608468855*^9}, {
+  3.758997655622907*^9, 3.7589977978728447`*^9}}],
+
+Cell[BoxData[
+ Graphics3DBox[
+  GraphicsComplex3DBox[
+   NCache[{{0, 0, (-5) (50 - 10 5^Rational[1, 2])^Rational[-1, 2]}, {
+     0, 0, 5 (50 - 10 5^Rational[1, 2])^
+       Rational[-1, 2]}, {-(2/(5 - 5^Rational[1, 2]))^Rational[1, 2], 
+      0, -(10 - 2 5^Rational[1, 2])^Rational[-1, 2]}, {(2/(5 - 5^
+       Rational[1, 2]))^Rational[1, 2], 0, (10 - 2 5^Rational[1, 2])^
+      Rational[-1, 2]}, {
+     Rational[1, 2] (10 - 2 5^Rational[1, 2])^Rational[-1, 2] (1 + 
+       5^Rational[1, 2]), 
+      Rational[-1, 2], -(10 - 2 5^Rational[1, 2])^Rational[-1, 2]}, {
+     Rational[1, 2] (10 - 2 5^Rational[1, 2])^Rational[-1, 2] (1 + 
+       5^Rational[1, 2]), Rational[
+      1, 2], -(10 - 2 5^Rational[1, 2])^Rational[-1, 2]}, {
+     Rational[-1, 2] (10 - 2 5^Rational[1, 2])^Rational[-1, 2] (1 + 
+       5^Rational[1, 2]), Rational[-1, 2], (10 - 2 5^Rational[1, 2])^
+      Rational[-1, 2]}, {
+     Rational[-1, 2] (10 - 2 5^Rational[1, 2])^Rational[-1, 2] (1 + 
+       5^Rational[1, 2]), Rational[1, 2], (10 - 2 5^Rational[1, 2])^
+      Rational[-1, 2]}, {
+     Rational[-1, 2] (10 - 2 5^Rational[1, 2])^Rational[-1, 2] (-1 + 
+       5^Rational[1, 2]), 
+      Rational[-1, 2] ((5 - 5^Rational[1, 2])^(-1) (5 + 5^Rational[1, 2]))^
+       Rational[1, 2], -(10 - 2 5^Rational[1, 2])^Rational[-1, 2]}, {
+     Rational[-1, 2] (10 - 2 5^Rational[1, 2])^Rational[-1, 2] (-1 + 
+       5^Rational[1, 2]), 
+      Rational[1, 2] ((5 - 5^Rational[1, 2])^(-1) (5 + 5^Rational[1, 2]))^
+       Rational[1, 2], -(10 - 2 5^Rational[1, 2])^Rational[-1, 2]}, {
+     Rational[1, 2] (10 - 2 5^Rational[1, 2])^Rational[-1, 2] (-1 + 
+       5^Rational[1, 2]), 
+      Rational[-1, 2] ((5 - 5^Rational[1, 2])^(-1) (5 + 5^Rational[1, 2]))^
+       Rational[1, 2], (10 - 2 5^Rational[1, 2])^Rational[-1, 2]}, {
+     Rational[1, 2] (10 - 2 5^Rational[1, 2])^Rational[-1, 2] (-1 + 
+       5^Rational[1, 2]), 
+      Rational[1, 2] ((5 - 5^Rational[1, 2])^(-1) (5 + 5^Rational[1, 2]))^
+       Rational[1, 2], (10 - 2 5^Rational[1, 2])^Rational[-1, 2]}}, {{
+     0, 0, -0.9510565162951536}, {
+     0, 0, 0.9510565162951536}, {-0.85065080835204, 
+      0, -0.42532540417601994`}, {
+     0.85065080835204, 0, 0.42532540417601994`}, {
+     0.6881909602355868, -0.5, -0.42532540417601994`}, {0.6881909602355868, 
+     0.5, -0.42532540417601994`}, {-0.6881909602355868, -0.5, 
+     0.42532540417601994`}, {-0.6881909602355868, 0.5, 
+     0.42532540417601994`}, {-0.2628655560595668, -0.8090169943749475, \
+-0.42532540417601994`}, {-0.2628655560595668, 
+     0.8090169943749475, -0.42532540417601994`}, {
+     0.2628655560595668, -0.8090169943749475, 0.42532540417601994`}, {
+     0.2628655560595668, 0.8090169943749475, 0.42532540417601994`}}], 
+   Polygon3DBox[{{2, 12, 8}, {2, 8, 7}, {2, 7, 11}, {2, 11, 4}, {2, 4, 12}, {
+    5, 9, 1}, {6, 5, 1}, {10, 6, 1}, {3, 10, 1}, {9, 3, 1}, {12, 10, 8}, {8, 
+    3, 7}, {7, 9, 11}, {11, 5, 4}, {4, 6, 12}, {5, 11, 9}, {6, 4, 5}, {10, 12,
+     6}, {3, 8, 10}, {9, 7, 3}}]]]], "Output",
+ CellChangeTimes->{
+  3.758997610869757*^9, {3.758997770615485*^9, 3.7589977990021105`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"PolyhedronData", "[", 
+  RowBox[{"\"\<Icosahedron\>\"", ",", "\"\<NetImage\>\""}], "]"}]], "Code",
+ CellChangeTimes->{
+  3.759001293018218*^9, {3.759001341172633*^9, 3.7590013466750937`*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[
+  {RGBColor[1, 1, 0.85], EdgeForm[GrayLevel[0]], 
+   GraphicsComplexBox[
+    NCache[{{1, 0}, {2, 0}, {3, 0}, {4, 0}, {5, 0}, {
+      Rational[1, 2], Rational[1, 2] 3^Rational[1, 2]}, {
+      Rational[3, 2], Rational[1, 2] 3^Rational[1, 2]}, {
+      Rational[5, 2], Rational[1, 2] 3^Rational[1, 2]}, {
+      Rational[7, 2], Rational[1, 2] 3^Rational[1, 2]}, {
+      Rational[9, 2], Rational[1, 2] 3^Rational[1, 2]}, {
+      Rational[11, 2], Rational[1, 2] 3^Rational[1, 2]}, {
+      0, 3^Rational[1, 2]}, {1, 3^Rational[1, 2]}, {2, 3^Rational[1, 2]}, {
+      3, 3^Rational[1, 2]}, {4, 3^Rational[1, 2]}, {5, 3^Rational[1, 2]}, {
+      Rational[1, 2], Rational[3, 2] 3^Rational[1, 2]}, {
+      Rational[3, 2], Rational[3, 2] 3^Rational[1, 2]}, {
+      Rational[5, 2], Rational[3, 2] 3^Rational[1, 2]}, {
+      Rational[7, 2], Rational[3, 2] 3^Rational[1, 2]}, {
+      Rational[9, 2], Rational[3, 2] 3^Rational[1, 2]}}, {{1, 0}, {2, 0}, {3, 
+      0}, {4, 0}, {5, 0}, {0.5, 0.8660254037844386}, {1.5, 
+      0.8660254037844386}, {2.5, 0.8660254037844386}, {3.5, 
+      0.8660254037844386}, {4.5, 0.8660254037844386}, {5.5, 
+      0.8660254037844386}, {0, 1.7320508075688772`}, {
+      1, 1.7320508075688772`}, {2, 1.7320508075688772`}, {
+      3, 1.7320508075688772`}, {4, 1.7320508075688772`}, {
+      5, 1.7320508075688772`}, {0.5, 2.598076211353316}, {1.5, 
+      2.598076211353316}, {2.5, 2.598076211353316}, {3.5, 
+      2.598076211353316}, {4.5, 2.598076211353316}}], 
+    PolygonBox[{{7, 6, 1}, {13, 12, 6}, {8, 7, 2}, {14, 13, 7}, {9, 8, 3}, {
+     15, 14, 8}, {10, 9, 4}, {16, 15, 9}, {11, 10, 5}, {17, 16, 10}, {6, 7, 
+     13}, {12, 13, 18}, {7, 8, 14}, {13, 14, 19}, {8, 9, 15}, {14, 15, 20}, {
+     9, 10, 16}, {15, 16, 21}, {10, 11, 17}, {16, 17, 22}}]]}]], "Output",
+ CellChangeTimes->{3.7590013509392223`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Dodekaeder", "Subsubsection",
+ CellChangeTimes->{{3.758971066096675*^9, 3.7589710685587387`*^9}}],
+
+Cell["\<\
+Poleg trikotnikov in kvadratov pa lahko Platonsko telo sestavimo tudi iz \
+petkotnikov. Tako telo se imenuje dodekaeder in je sestavljen iz dvanajstih \
+petkotnikov.\
+\>", "Text",
+ CellChangeTimes->{{3.7589999341667643`*^9, 3.7589999999285855`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"PolyhedronData", "[", "\"\<Dodecahedron\>\"", "]"}]], "Code",
+ CellChangeTimes->{3.7589978152812*^9}],
+
+Cell[BoxData[
+ Graphics3DBox[
+  GraphicsComplex3DBox[
+   NCache[{{-(1 + 2 5^Rational[-1, 2])^Rational[1, 2], 0, Root[
+      1 - 20 #^2 + 80 #^4& , 3, 0]}, {(1 + 2 5^Rational[-1, 2])^
+      Rational[1, 2], 0, Root[1 - 20 #^2 + 80 #^4& , 2, 0]}, {
+     Root[1 - 20 #^2 + 80 #^4& , 1, 0], 
+      Rational[1, 4] (-3 - 5^Rational[1, 2]), Root[
+      1 - 20 #^2 + 80 #^4& , 3, 0]}, {
+     Root[1 - 20 #^2 + 80 #^4& , 1, 0], Rational[1, 4] (3 + 5^Rational[1, 2]),
+       Root[1 - 20 #^2 + 80 #^4& , 3, 0]}, {(Rational[5, 8] + 
+       Rational[11, 8] 5^Rational[-1, 2])^Rational[1, 2], 
+      Rational[1, 4] (-1 - 5^Rational[1, 2]), Root[
+      1 - 20 #^2 + 80 #^4& , 3, 0]}, {(Rational[5, 8] + 
+       Rational[11, 8] 5^Rational[-1, 2])^Rational[1, 2], 
+      Rational[1, 4] (1 + 5^Rational[1, 2]), Root[
+      1 - 20 #^2 + 80 #^4& , 3, 0]}, {
+     Root[1 - 20 #^2 + 80 #^4& , 2, 0], 
+      Rational[1, 4] (-1 - 5^Rational[1, 2]), (Rational[5, 8] + 
+       Rational[11, 8] 5^Rational[-1, 2])^Rational[1, 2]}, {
+     Root[1 - 20 #^2 + 80 #^4& , 2, 0], 
+      Rational[1, 4] (1 + 5^Rational[1, 2]), (Rational[5, 8] + 
+       Rational[11, 8] 5^Rational[-1, 2])^Rational[1, 2]}, {
+     Rational[-1, 2] (1 + 2 5^Rational[-1, 2])^Rational[1, 2], 
+      Rational[-1, 2], Root[1 - 100 #^2 + 80 #^4& , 1, 0]}, {
+     Rational[-1, 2] (1 + 2 5^Rational[-1, 2])^Rational[1, 2], Rational[1, 2],
+       Root[1 - 100 #^2 + 80 #^4& , 1, 0]}, {(Rational[1, 4] + 
+       Rational[1, 2] 5^Rational[-1, 2])^Rational[1, 2], 
+      Rational[-1, 2], (Rational[5, 8] + Rational[11, 8] 5^Rational[-1, 2])^
+      Rational[1, 2]}, {(Rational[1, 4] + Rational[1, 2] 5^Rational[-1, 2])^
+      Rational[1, 2], Rational[
+      1, 2], (Rational[5, 8] + Rational[11, 8] 5^Rational[-1, 2])^
+      Rational[1, 2]}, {(Rational[1, 10] (5 + 5^Rational[1, 2]))^
+      Rational[1, 2], 0, Root[1 - 100 #^2 + 80 #^4& , 1, 0]}, {
+     Root[1 - 100 #^2 + 80 #^4& , 1, 0], 
+      Rational[1, 4] (-1 - 5^Rational[1, 2]), Root[
+      1 - 20 #^2 + 80 #^4& , 2, 0]}, {
+     Root[1 - 100 #^2 + 80 #^4& , 1, 0], 
+      Rational[1, 4] (1 + 5^Rational[1, 2]), Root[
+      1 - 20 #^2 + 80 #^4& , 2, 0]}, {
+     Root[1 - 5 #^2 + 5 #^4& , 1, 0], 
+      0, (Rational[5, 8] + Rational[11, 8] 5^Rational[-1, 2])^
+      Rational[1, 2]}, {
+     Root[1 - 20 #^2 + 80 #^4& , 3, 0], 
+      Rational[1, 4] (-1 - 5^Rational[1, 2]), Root[
+      1 - 100 #^2 + 80 #^4& , 1, 0]}, {
+     Root[1 - 20 #^2 + 80 #^4& , 3, 0], Rational[1, 4] (1 + 5^Rational[1, 2]),
+       Root[1 - 100 #^2 + 80 #^4& , 1, 0]}, {(Rational[1, 8] + 
+       Rational[1, 8] 5^Rational[-1, 2])^Rational[1, 2], 
+      Rational[1, 4] (-3 - 5^Rational[1, 2]), Root[
+      1 - 20 #^2 + 80 #^4& , 2, 0]}, {(Rational[1, 8] + 
+       Rational[1, 8] 5^Rational[-1, 2])^Rational[1, 2], 
+      Rational[1, 4] (3 + 5^Rational[1, 2]), Root[
+      1 - 20 #^2 + 80 #^4& , 2, 0]}}, {{-1.3763819204711736`, 0, 
+      0.2628655560595668}, {
+     1.3763819204711736`, 
+      0, -0.2628655560595668}, {-0.42532540417602, -1.3090169943749475`, 
+     0.2628655560595668}, {-0.42532540417602, 1.3090169943749475`, 
+     0.2628655560595668}, {1.1135163644116066`, -0.8090169943749475, 
+     0.2628655560595668}, {1.1135163644116066`, 0.8090169943749475, 
+     0.2628655560595668}, {-0.2628655560595668, -0.8090169943749475, 
+     1.1135163644116066`}, {-0.2628655560595668, 0.8090169943749475, 
+     1.1135163644116066`}, {-0.6881909602355868, -0.5, -1.1135163644116066`}, \
+{-0.6881909602355868, 0.5, -1.1135163644116066`}, {0.6881909602355868, -0.5, 
+     1.1135163644116066`}, {0.6881909602355868, 0.5, 1.1135163644116066`}, {
+     0.85065080835204, 
+      0, -1.1135163644116066`}, {-1.1135163644116066`, -0.8090169943749475, \
+-0.2628655560595668}, {-1.1135163644116066`, 
+     0.8090169943749475, -0.2628655560595668}, {-0.85065080835204, 0, 
+      1.1135163644116066`}, {
+     0.2628655560595668, -0.8090169943749475, -1.1135163644116066`}, {
+     0.2628655560595668, 0.8090169943749475, -1.1135163644116066`}, {
+     0.42532540417601994`, -1.3090169943749475`, -0.2628655560595668}, {
+     0.42532540417601994`, 1.3090169943749475`, -0.2628655560595668}}], 
+   Polygon3DBox[{{15, 10, 9, 14, 1}, {2, 6, 12, 11, 5}, {5, 11, 7, 3, 19}, {
+    11, 12, 8, 16, 7}, {12, 6, 20, 4, 8}, {6, 2, 13, 18, 20}, {2, 5, 19, 17, 
+    13}, {4, 20, 18, 10, 15}, {18, 13, 17, 9, 10}, {17, 19, 3, 14, 9}, {3, 7, 
+    16, 1, 14}, {16, 8, 4, 15, 1}}]]]], "Output",
+ CellChangeTimes->{3.758997816585857*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"PolyhedronData", "[", 
+  RowBox[{"\"\<Dodecahedron\>\"", ",", "\"\<NetImage\>\""}], "]"}]], "Code",
+ CellChangeTimes->{3.75900136170335*^9}],
+
+Cell[BoxData[
+ GraphicsBox[
+  {RGBColor[1, 1, 0.85], EdgeForm[GrayLevel[0]], 
+   GraphicsComplexBox[
+    NCache[{{Rational[1, 2] (2 + 5^Rational[1, 2]), 0}, {
+      Rational[5, 2] + 5^Rational[1, 2], 0}, {
+      Rational[7, 2] + 5^Rational[1, 2], 0}, {
+      Rational[3, 2] (2 + 5^Rational[1, 2]), 0}, {
+      4 + Rational[3, 2] 5^Rational[1, 2], 0}, {
+      Rational[1, 4] (3 + 5^Rational[1, 2]), 
+       Rational[1, 4] (10 - 2 5^Rational[1, 2])^Rational[1, 2]}, {
+      Rational[1, 4] (5 + 3 5^Rational[1, 2]), 
+       Rational[1, 4] (10 - 2 5^Rational[1, 2])^Rational[1, 2]}, {
+      Rational[1, 4] (1 + 5^Rational[1, 2]), (Rational[5, 8] + 
+        Rational[1, 8] 5^Rational[1, 2])^Rational[1, 2]}, {
+      Rational[1, 4] (7 + 3 5^Rational[1, 2]), (Rational[5, 8] + 
+        Rational[1, 8] 5^Rational[1, 2])^Rational[1, 2]}, {
+      Rational[1, 4] (11 + 3 5^Rational[1, 2]), (Rational[5, 8] + 
+        Rational[1, 8] 5^Rational[1, 2])^Rational[1, 2]}, {
+      Rational[1, 4] (13 + 5 5^Rational[1, 2]), (Rational[5, 8] + 
+        Rational[1, 8] 5^Rational[1, 2])^Rational[1, 2]}, {
+      Rational[1, 4] (15 + 7 5^Rational[1, 2]), (Rational[5, 8] + 
+        Rational[1, 8] 5^Rational[1, 2])^Rational[1, 2]}, {
+      0, Rational[1, 2] (5 + 2 5^Rational[1, 2])^Rational[1, 2]}, {
+      Rational[1, 2] (1 + 5^Rational[1, 2]), 
+       Rational[1, 2] (5 + 2 5^Rational[1, 2])^Rational[1, 2]}, {
+      Rational[1, 2] (3 + 5^Rational[1, 2]), 
+       Rational[1, 2] (5 + 2 5^Rational[1, 2])^Rational[1, 2]}, {
+      2 + 5^Rational[1, 2], 
+       Rational[1, 2] (5 + 2 5^Rational[1, 2])^Rational[1, 2]}, {
+      3 + 5^Rational[1, 2], 
+       Rational[1, 2] (5 + 2 5^Rational[1, 2])^Rational[1, 2]}, {
+      Rational[1, 2] (7 + 3 5^Rational[1, 2]), 
+       Rational[1, 2] (5 + 2 5^Rational[1, 2])^Rational[1, 2]}, {
+      Rational[3, 2] (3 + 5^Rational[1, 2]), 
+       Rational[1, 2] (5 + 2 5^Rational[1, 2])^Rational[1, 2]}, {
+      Rational[1, 4] (-1 + 5^Rational[1, 2]), 
+       Rational[1, 4] (50 + 22 5^Rational[1, 2])^Rational[1, 2]}, {
+      Rational[1, 4] (3 + 5^Rational[1, 2]), 
+       Rational[1, 4] (50 + 22 5^Rational[1, 2])^Rational[1, 2]}, {
+      Rational[1, 4] (5 + 3 5^Rational[1, 2]), 
+       Rational[1, 4] (50 + 22 5^Rational[1, 2])^Rational[1, 2]}, {
+      Rational[3, 4] (3 + 5^Rational[1, 2]), 
+       Rational[1, 4] (50 + 22 5^Rational[1, 2])^Rational[1, 2]}, {
+      Rational[1, 4] (11 + 5 5^Rational[1, 2]), (Rational[25, 8] + 
+        Rational[11, 8] 5^Rational[1, 2])^Rational[1, 2]}, {
+      Rational[5, 4] (3 + 5^Rational[1, 2]), (Rational[25, 8] + 
+        Rational[11, 8] 5^Rational[1, 2])^Rational[1, 2]}, {
+      Rational[1, 4] (17 + 7 5^Rational[1, 2]), 
+       Rational[1, 4] (50 + 22 5^Rational[1, 2])^Rational[1, 2]}, {
+      Rational[1, 2], (5 + 2 5^Rational[1, 2])^Rational[1, 2]}, {
+      Rational[1, 2] (2 + 5^Rational[1, 2]), (5 + 2 5^Rational[1, 2])^
+       Rational[1, 2]}, {
+      Rational[3, 2] + 5^Rational[1, 2], (5 + 2 5^Rational[1, 2])^
+       Rational[1, 2]}, {
+      Rational[5, 2] + 5^Rational[1, 2], (5 + 2 5^Rational[1, 2])^
+       Rational[1, 2]}, {
+      4 + Rational[3, 2] 5^Rational[1, 2], (5 + 2 5^Rational[1, 2])^
+       Rational[1, 2]}, {
+      3 + 5^Rational[1, 2], (Rational[25, 4] + 
+        Rational[5, 2] 5^Rational[1, 2])^Rational[1, 2]}, {
+      Rational[1, 2] (7 + 3 5^Rational[1, 2]), (Rational[25, 4] + 
+        Rational[5, 2] 5^Rational[1, 2])^Rational[1, 2]}, {
+      Rational[1, 4] (1 + 5^Rational[1, 2]), (Rational[65, 8] + 
+        Rational[29, 8] 5^Rational[1, 2])^Rational[1, 2]}, {
+      Rational[1, 4] (5 + 5^Rational[1, 2]), (Rational[65, 8] + 
+        Rational[29, 8] 5^Rational[1, 2])^Rational[1, 2]}, {
+      Rational[3, 4] (1 + 5^Rational[1, 2]), (Rational[65, 8] + 
+        Rational[29, 8] 5^Rational[1, 2])^Rational[1, 2]}, {
+      Rational[1, 4] (7 + 3 5^Rational[1, 2]), (Rational[65, 8] + 
+        Rational[29, 8] 5^Rational[1, 2])^Rational[1, 2]}, {
+      Rational[1, 4] (13 + 5 5^Rational[1, 2]), (Rational[65, 8] + 
+        Rational[29, 8] 5^Rational[1, 2])^Rational[1, 2]}}, {{
+      2.118033988749895, 0}, {4.73606797749979, 0}, {5.73606797749979, 0}, {
+      6.354101966249685, 0}, {7.354101966249685, 0}, {1.3090169943749475`, 
+      0.5877852522924731}, {2.9270509831248424`, 0.5877852522924731}, {
+      0.8090169943749475, 0.9510565162951535}, {3.4270509831248424`, 
+      0.9510565162951535}, {4.427050983124842, 0.9510565162951535}, {
+      6.045084971874737, 0.9510565162951535}, {7.663118960624632, 
+      0.9510565162951535}, {0, 1.5388417685876268`}, {1.618033988749895, 
+      1.5388417685876268`}, {2.618033988749895, 1.5388417685876268`}, {
+      4.23606797749979, 1.5388417685876268`}, {5.23606797749979, 
+      1.5388417685876268`}, {6.854101966249685, 1.5388417685876268`}, {
+      7.854101966249685, 1.5388417685876268`}, {0.30901699437494745`, 
+      2.48989828488278}, {1.3090169943749475`, 2.48989828488278}, {
+      2.9270509831248424`, 2.48989828488278}, {3.9270509831248424`, 
+      2.48989828488278}, {5.545084971874737, 2.48989828488278}, {
+      6.545084971874737, 2.48989828488278}, {8.163118960624633, 
+      2.48989828488278}, {0.5, 3.0776835371752536`}, {2.118033988749895, 
+      3.0776835371752536`}, {3.73606797749979, 3.0776835371752536`}, {
+      4.73606797749979, 3.0776835371752536`}, {7.354101966249685, 
+      3.0776835371752536`}, {5.23606797749979, 3.440954801177934}, {
+      6.854101966249685, 3.440954801177934}, {0.8090169943749475, 
+      4.028740053470407}, {1.8090169943749475`, 4.028740053470407}, {
+      2.4270509831248424`, 4.028740053470407}, {3.4270509831248424`, 
+      4.028740053470407}, {6.045084971874737, 4.028740053470407}}], 
+    PolygonBox[{{18, 25, 24, 17, 11}, {32, 24, 25, 33, 38}, {31, 25, 18, 19, 
+     26}, {12, 18, 11, 4, 5}, {3, 11, 17, 10, 2}, {16, 17, 24, 30, 23}, {23, 
+     22, 15, 9, 16}, {7, 15, 14, 6, 1}, {8, 14, 21, 20, 13}, {27, 21, 28, 35, 
+     34}, {36, 28, 22, 29, 37}, {21, 14, 15, 22, 28}}]]}]], "Output",
+ CellChangeTimes->{3.7590013642261286`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Zakaj samo 5?", "Subsubsection",
+ CellChangeTimes->{{3.759000188869922*^9, 3.759000218794431*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+\[CapitalCHacek]e telo razgrnemo, se pravi ga spravimo iz 3D prostora v \
+dvodimenzionalen prostor, mora biti vsota kotov v istem \
+ogli\[SHacek]\[CHacek]u manj\[SHacek]a od 360\[Degree].\
+\>", "Item",
+ CellChangeTimes->{{3.759000271566437*^9, 3.7590003389716563`*^9}, {
+  3.759000410714054*^9, 3.7590004202732*^9}, {3.75900046275455*^9, 
+  3.7590005840146403`*^9}, {3.759001029402775*^9, 3.759001030161886*^9}}],
+
+Cell["\<\
+Ker se morajo v vsakem ogli\[SHacek]\[CHacek]u stikati vsaj trije pravilni \
+mnogokotniki, notranji kot ve\[CHacek]kotnika ne sme presegati \
+120\[Degree].To pomeni, da lahko taka telesa sestavimo le iz enakostrani\
+\[CHacek]nih trikotnikov, kvadratov in pravilnih 5-kotnikov.\
+\>", "Item",
+ CellChangeTimes->{
+  3.759000271566437*^9, {3.7590006022330713`*^9, 3.759000749379361*^9}, 
+   3.7590008472027864`*^9}],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+enakostrani\[CHacek]notrikotni\[SHacek]ke stranske ploskve : vsako ogli\
+\[SHacek]\[CHacek]e enakostrani\[CHacek]nega trikotnika je 60 \[Degree], \
+tako, da ima oblika lahko 3, 4 ali 5 enakostrani\[CHacek]nih trikotnikov, ki \
+se stikajo v ogli\[SHacek]\[CHacek]u.To so tetraeder, oktaeder in ikozaeder\
+\>", "Subitem",
+ CellChangeTimes->{3.7590008273480444`*^9}],
+
+Cell["\<\
+kvadratne stranske ploskve : vsako ogli\[SHacek]\[CHacek]e kvadrata je 90 \
+\[Degree], tako da je mo\[ZHacek]na samo ena postavitev s tremi stranskimi \
+ploskvami v ogli\[SHacek]\[CHacek]u.To je kocka.\
+\>", "Subitem",
+ CellChangeTimes->{3.7590009036101027`*^9}],
+
+Cell["\<\
+petkotni\[SHacek]ke stranske ploskve : vsako ogli\[SHacek]\[CHacek]e \
+petkotnika je 108 \[Degree], tako da je mo\[ZHacek]na samo ena postavitev s \
+tremi stranskimi ploskvami v ogli\[SHacek]\[CHacek]u.To je dodekaeder.\
+\>", "Subitem",
+ CellChangeTimes->{{3.759000965221255*^9, 3.759000971048787*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell["Skupaj je tako mo\[ZHacek]nih le 5 platonskih teles.", "Text",
+ CellChangeTimes->{{3.759000103239682*^9, 3.7590001790289483`*^9}, {
+   3.759000226368433*^9, 3.7590002283153067`*^9}, 3.7590002764342566`*^9, {
+   3.7590007667472415`*^9, 3.759000783923047*^9}, 3.7590008764356847`*^9, {
+   3.759000911722637*^9, 3.7590009122682543`*^9}, {3.759000977126057*^9, 
+   3.7590009782573347`*^9}, {3.7590010432665405`*^9, 3.7590010437574167`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Ostala telesa iz pravilnih mnogokotnikov", "Subsubsection",
+ CellChangeTimes->{{3.7590014344813967`*^9, 3.75900145776044*^9}}],
+
+Cell["\<\
+Poleg Platonskih teles, pa lahko iz pravilnih mnogokotnikov sestavimo tudi \
+druga telesa, za katere zdru\[ZHacek]imo razli\[CHacek]ne mnogokotnike.\
+\>", "Text",
+ CellChangeTimes->{{3.7590014631658545`*^9, 3.75900154512873*^9}}],
+
+Cell["12 petkotnikov in 20 \[SHacek]estkotnikov :", "Item",
+ CellChangeTimes->{{3.7590015609031134`*^9, 3.759001568881248*^9}, {
+  3.7590017085063224`*^9, 3.7590017506228056`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"PolyhedronData", "[", "\"\<TruncatedIcosahedron\>\"", "]"}]], "Code",
+ CellChangeTimes->{{3.759001586862437*^9, 3.759001622436026*^9}, 
+   3.759001654889181*^9}],
+
+Cell[BoxData[
+ Graphics3DBox[
+  GraphicsComplex3DBox[
+   NCache[{{Rational[-1, 2] (1 - 2 5^Rational[-1, 2])^Rational[1, 2], -1 + 
+      Rational[-1, 2] 5^Rational[1, 2], (Rational[9, 8] + 
+       Rational[9, 8] 5^Rational[-1, 2])^Rational[1, 2]}, {
+     Rational[-1, 2] (1 - 2 5^Rational[-1, 2])^Rational[1, 2], 
+      Rational[1, 2] (2 + 5^Rational[1, 2]), (Rational[9, 8] + 
+       Rational[9, 8] 5^Rational[-1, 2])^Rational[1, 2]}, {
+     Rational[1, 2] (1 - 2 5^Rational[-1, 2])^Rational[1, 2], -1 + 
+      Rational[-1, 2] 5^Rational[1, 2], 
+      Rational[-3, 2] (Rational[1, 10] (5 + 5^Rational[1, 2]))^
+       Rational[1, 2]}, {
+     Rational[1, 2] (1 - 2 5^Rational[-1, 2])^Rational[1, 2], 
+      Rational[1, 2] (2 + 5^Rational[1, 2]), 
+      Rational[-3, 2] (Rational[1, 10] (5 + 5^Rational[1, 2]))^
+       Rational[1, 2]}, {
+     Rational[-1, 4] (2 - 2 5^Rational[-1, 2])^Rational[1, 2], (1 - 5^
+       Rational[1, 2])^(-1), -(Rational[25, 8] + 
+        Rational[41, 8] 5^Rational[-1, 2])^Rational[1, 2]}, {
+     Rational[-1, 4] (2 - 2 5^Rational[-1, 2])^Rational[1, 2], 
+      Rational[-3, 4] (1 + 5^Rational[1, 2]), Root[
+      1 - 20 #^2 + 80 #^4& , 1, 0]}, {
+     Rational[-1, 4] (2 - 2 5^Rational[-1, 2])^Rational[1, 2], 
+      Rational[1, 4] (1 + 
+       5^Rational[1, 2]), -(Rational[25, 8] + 
+        Rational[41, 8] 5^Rational[-1, 2])^Rational[1, 2]}, {
+     Rational[-1, 4] (2 - 2 5^Rational[-1, 2])^Rational[1, 2], 
+      Rational[3, 4] (1 + 5^Rational[1, 2]), Root[
+      1 - 20 #^2 + 80 #^4& , 1, 0]}, {
+     Rational[1, 4] (2 - 2 5^Rational[-1, 2])^Rational[1, 2], (1 - 5^
+       Rational[1, 2])^(-1), (Rational[25, 8] + 
+       Rational[41, 8] 5^Rational[-1, 2])^Rational[1, 2]}, {
+     Rational[1, 4] (2 - 2 5^Rational[-1, 2])^Rational[1, 2], 
+      Rational[-3, 4] (1 + 5^Rational[1, 2]), (Rational[1, 8] + 
+       Rational[1, 8] 5^Rational[-1, 2])^Rational[1, 2]}, {
+     Rational[1, 4] (2 - 2 5^Rational[-1, 2])^Rational[1, 2], 
+      Rational[1, 4] (1 + 5^Rational[1, 2]), (Rational[25, 8] + 
+       Rational[41, 8] 5^Rational[-1, 2])^Rational[1, 2]}, {
+     Rational[1, 4] (2 - 2 5^Rational[-1, 2])^Rational[1, 2], 
+      Rational[3, 4] (1 + 5^Rational[1, 2]), (Rational[1, 8] + 
+       Rational[1, 8] 5^Rational[-1, 2])^
+      Rational[1, 2]}, {(Rational[1, 4] + Rational[1, 2] 5^Rational[-1, 2])^
+      Rational[1, 2], 
+      Rational[-1, 2], -(Rational[25, 8] + Rational[41, 8] 5^Rational[-1, 2])^
+       Rational[1, 2]}, {(Rational[1, 4] + Rational[1, 2] 5^Rational[-1, 2])^
+      Rational[1, 2], Rational[
+      1, 2], -(Rational[25, 8] + Rational[41, 8] 5^Rational[-1, 2])^
+       Rational[1, 2]}, {(Rational[5, 4] + Rational[1, 2] 5^Rational[-1, 2])^
+      Rational[1, 2], -1 + 
+      Rational[-1, 2] 5^Rational[1, 2], (Rational[1, 8] + 
+       Rational[1, 8] 5^Rational[-1, 2])^
+      Rational[1, 2]}, {(Rational[5, 4] + Rational[1, 2] 5^Rational[-1, 2])^
+      Rational[1, 2], 
+      Rational[1, 2] (2 + 5^Rational[1, 2]), (Rational[1, 8] + 
+       Rational[1, 8] 5^Rational[-1, 2])^Rational[1, 2]}, {
+     Rational[-3, 2] (1 + 2 5^Rational[-1, 2])^Rational[1, 2], 
+      Rational[-1, 2], (Rational[9, 8] + Rational[9, 8] 5^Rational[-1, 2])^
+      Rational[1, 2]}, {
+     Rational[-3, 2] (1 + 2 5^Rational[-1, 2])^Rational[1, 2], Rational[
+      1, 2], (Rational[9, 8] + Rational[9, 8] 5^Rational[-1, 2])^
+      Rational[1, 2]}, {-(1 + 2 5^Rational[-1, 2])^Rational[1, 2], -1, 
+      Rational[1, 4] (26 + 58 5^Rational[-1, 2])^
+       Rational[1, 2]}, {-(1 + 2 5^Rational[-1, 2])^Rational[1, 2], 1, 
+      Rational[1, 4] (26 + 58 5^Rational[-1, 2])^
+       Rational[1, 2]}, {-(1 + 2 5^Rational[-1, 2])^Rational[1, 2], (-2)/(-1 + 
+      5^Rational[1, 2]), 
+      Rational[-3, 2] (Rational[1, 10] (5 + 5^Rational[1, 2]))^
+       Rational[1, 2]}, {-(1 + 2 5^Rational[-1, 2])^Rational[1, 2], 
+      Rational[1, 2] (1 + 5^Rational[1, 2]), 
+      Rational[-3, 2] (Rational[1, 10] (5 + 5^Rational[1, 2]))^
+       Rational[1, 2]}, {
+     Rational[-1, 2] (1 + 2 5^Rational[-1, 2])^Rational[1, 2], 
+      Rational[-1, 2], (Rational[25, 8] + Rational[41, 8] 5^Rational[-1, 2])^
+      Rational[1, 2]}, {
+     Rational[-1, 2] (1 + 2 5^Rational[-1, 2])^Rational[1, 2], Rational[
+      1, 2], (Rational[25, 8] + Rational[41, 8] 5^Rational[-1, 2])^
+      Rational[1, 2]}, {(1 + 2 5^Rational[-1, 2])^Rational[1, 2], -1, Root[
+      1 - 260 #^2 + 80 #^4& , 1, 0]}, {(1 + 2 5^Rational[-1, 2])^
+      Rational[1, 2], 1, Root[
+      1 - 260 #^2 + 80 #^4& , 1, 0]}, {(1 + 2 5^Rational[-1, 2])^
+      Rational[1, 2], (-2)/(-1 + 
+      5^Rational[1, 2]), (Rational[9, 8] + Rational[9, 8] 5^Rational[-1, 2])^
+      Rational[1, 2]}, {(1 + 2 5^Rational[-1, 2])^Rational[1, 2], 
+      Rational[1, 2] (1 + 5^Rational[1, 2]), (Rational[9, 8] + 
+       Rational[9, 8] 5^Rational[-1, 2])^
+      Rational[1, 2]}, {-(2 + 2 5^Rational[-1, 2])^Rational[1, 2], 0, Root[
+      1 - 260 #^2 + 80 #^4& , 1, 0]}, {(2 + 2 5^Rational[-1, 2])^
+      Rational[1, 2], 0, 
+      Rational[1, 4] (26 + 58 5^Rational[-1, 2])^Rational[1, 2]}, {
+     Rational[-1, 2] (5 + 2 5^Rational[-1, 2])^Rational[1, 2], -1 + 
+      Rational[-1, 2] 5^Rational[1, 2], Root[1 - 20 #^2 + 80 #^4& , 1, 0]}, {
+     Rational[-1, 2] (5 + 2 5^Rational[-1, 2])^Rational[1, 2], 
+      Rational[1, 2] (2 + 5^Rational[1, 2]), Root[
+      1 - 20 #^2 + 80 #^4& , 1, 
+       0]}, {-(Rational[17, 8] + Rational[31, 8] 5^Rational[-1, 2])^
+       Rational[1, 2], (1 - 5^Rational[1, 2])^(-1), 
+      Rational[-3, 2] (Rational[1, 10] (5 + 5^Rational[1, 2]))^
+       Rational[1, 2]}, {-(Rational[17, 8] + 
+        Rational[31, 8] 5^Rational[-1, 2])^Rational[1, 2], 
+      Rational[1, 4] (1 + 5^Rational[1, 2]), 
+      Rational[-3, 2] (Rational[1, 10] (5 + 5^Rational[1, 2]))^
+       Rational[1, 2]}, {(Rational[9, 4] + Rational[9, 2] 5^Rational[-1, 2])^
+      Rational[1, 2], Rational[-1, 2], 
+      Rational[-3, 2] (Rational[1, 10] (5 + 5^Rational[1, 2]))^
+       Rational[1, 2]}, {(Rational[9, 4] + Rational[9, 2] 5^Rational[-1, 2])^
+      Rational[1, 2], Rational[1, 2], 
+      Rational[-3, 2] (Rational[1, 10] (5 + 5^Rational[1, 2]))^
+       Rational[1, 2]}, {(Rational[5, 2] + Rational[11, 2] 5^Rational[-1, 2])^
+      Rational[1, 2], -1, Root[
+      1 - 20 #^2 + 80 #^4& , 1, 0]}, {(Rational[5, 2] + 
+       Rational[11, 2] 5^Rational[-1, 2])^Rational[1, 2], 1, Root[
+      1 - 20 #^2 + 80 #^4& , 1, 0]}, {(Rational[13, 4] + 
+       Rational[11, 2] 5^Rational[-1, 2])^Rational[1, 2], 
+      Rational[-1, 2], (Rational[1, 8] + Rational[1, 8] 5^Rational[-1, 2])^
+      Rational[1, 2]}, {(Rational[13, 4] + Rational[11, 2] 5^Rational[-1, 2])^
+      Rational[1, 2], Rational[
+      1, 2], (Rational[1, 8] + Rational[1, 8] 5^Rational[-1, 2])^
+      Rational[1, 2]}, {
+     Rational[-1, 4] (10 + 22 5^Rational[-1, 2])^Rational[1, 2], 
+      Rational[1, 4] (-5 - 5^Rational[1, 2]), (Rational[9, 8] + 
+       Rational[9, 8] 5^Rational[-1, 2])^Rational[1, 2]}, {
+     Rational[-1, 4] (10 + 22 5^Rational[-1, 2])^Rational[1, 2], 
+      Rational[1, 4] (5 + 5^Rational[1, 2]), (Rational[9, 8] + 
+       Rational[9, 8] 5^Rational[-1, 2])^Rational[1, 2]}, {
+     Rational[1, 4] (10 + 22 5^Rational[-1, 2])^Rational[1, 2], 
+      Rational[1, 4] (-5 - 5^Rational[1, 2]), 
+      Rational[-3, 2] (Rational[1, 10] (5 + 5^Rational[1, 2]))^
+       Rational[1, 2]}, {
+     Rational[1, 4] (10 + 22 5^Rational[-1, 2])^Rational[1, 2], 
+      Rational[1, 4] (5 + 5^Rational[1, 2]), 
+      Rational[-3, 2] (Rational[1, 10] (5 + 5^Rational[1, 2]))^
+       Rational[1, 2]}, {
+     Rational[-1, 2] (13 + 22 5^Rational[-1, 2])^Rational[1, 2], 
+      Rational[-1, 2], Root[1 - 20 #^2 + 80 #^4& , 1, 0]}, {
+     Rational[-1, 2] (13 + 22 5^Rational[-1, 2])^Rational[1, 2], Rational[
+      1, 2], Root[1 - 20 #^2 + 80 #^4& , 1, 0]}, {
+     Rational[-1, 4] (26 + 38 5^Rational[-1, 2])^Rational[1, 2], 
+      Rational[1, 4] (-5 - 5^Rational[1, 2]), (Rational[1, 8] + 
+       Rational[1, 8] 5^Rational[-1, 2])^Rational[1, 2]}, {
+     Rational[-1, 4] (26 + 38 5^Rational[-1, 2])^Rational[1, 2], 
+      Rational[1, 4] (5 + 5^Rational[1, 2]), (Rational[1, 8] + 
+       Rational[1, 8] 5^Rational[-1, 2])^Rational[1, 2]}, {
+     Rational[1, 4] (26 + 38 5^Rational[-1, 2])^Rational[1, 2], 
+      Rational[1, 4] (-5 - 5^Rational[1, 2]), Root[
+      1 - 20 #^2 + 80 #^4& , 1, 0]}, {
+     Rational[1, 4] (26 + 38 5^Rational[-1, 2])^Rational[1, 2], 
+      Rational[1, 4] (5 + 5^Rational[1, 2]), Root[
+      1 - 20 #^2 + 80 #^4& , 1, 0]}, {
+     Rational[1, 4] (34 + 62 5^Rational[-1, 2])^Rational[1, 2], (1 - 5^
+       Rational[1, 2])^(-1), (Rational[9, 8] + 
+       Rational[9, 8] 5^Rational[-1, 2])^Rational[1, 2]}, {
+     Rational[1, 4] (34 + 62 5^Rational[-1, 2])^Rational[1, 2], 
+      Rational[1, 4] (1 + 5^Rational[1, 2]), (Rational[9, 8] + 
+       Rational[9, 8] 5^Rational[-1, 2])^
+      Rational[1, 2]}, {(Rational[1, 10] (5 + 5^Rational[1, 2]))^
+      Rational[1, 2], 
+      0, (Rational[25, 8] + Rational[41, 8] 5^Rational[-1, 2])^
+      Rational[1, 2]}, {
+     Root[1 - 25 #^2 + 5 #^4& , 1, 0], -1, (Rational[1, 8] + 
+       Rational[1, 8] 5^Rational[-1, 2])^Rational[1, 2]}, {
+     Root[1 - 25 #^2 + 5 #^4& , 1, 0], 
+      1, (Rational[1, 8] + Rational[1, 8] 5^Rational[-1, 2])^
+      Rational[1, 2]}, {
+     Root[1 - 5 #^2 + 5 #^4& , 1, 0], 
+      0, -(Rational[25, 8] + Rational[41, 8] 5^Rational[-1, 2])^
+       Rational[1, 2]}, {
+     Root[1 - 5 #^2 + 5 #^4& , 2, 0], (-2)/(-1 + 5^Rational[1, 2]), Root[
+      1 - 260 #^2 + 80 #^4& , 1, 0]}, {
+     Root[1 - 5 #^2 + 5 #^4& , 2, 0], Rational[1, 2] (1 + 5^Rational[1, 2]), 
+      Root[1 - 260 #^2 + 80 #^4& , 1, 0]}, {
+     Root[1 - 5 #^2 + 5 #^4& , 3, 0], (-2)/(-1 + 5^Rational[1, 2]), 
+      Rational[1, 4] (26 + 58 5^Rational[-1, 2])^Rational[1, 2]}, {
+     Root[1 - 5 #^2 + 5 #^4& , 3, 0], Rational[1, 2] (1 + 5^Rational[1, 2]), 
+      Rational[1, 4] (26 + 58 5^Rational[-1, 2])^
+       Rational[1, 2]}}, {{-0.16245984811645317`, -2.118033988749895, 
+     1.2759762125280598`}, {-0.16245984811645317`, 2.118033988749895, 
+     1.2759762125280598`}, {
+     0.16245984811645317`, -2.118033988749895, -1.27597621252806}, {
+     0.16245984811645317`, 
+     2.118033988749895, -1.27597621252806}, {-0.2628655560595668, \
+-0.8090169943749473, -2.327438436766327}, {-0.2628655560595668, \
+-2.4270509831248424`, -0.42532540417602}, {-0.2628655560595668, 
+     0.8090169943749475, -2.327438436766327}, {-0.2628655560595668, 
+     2.4270509831248424`, -0.42532540417602}, {
+     0.2628655560595668, -0.8090169943749473, 2.327438436766327}, {
+     0.2628655560595668, -2.4270509831248424`, 0.42532540417601994`}, {
+     0.2628655560595668, 0.8090169943749475, 2.327438436766327}, {
+     0.2628655560595668, 2.4270509831248424`, 0.42532540417601994`}, {
+     0.6881909602355868, -0.5, -2.327438436766327}, {0.6881909602355868, 
+     0.5, -2.327438436766327}, {1.2139220723547204`, -2.118033988749895, 
+     0.42532540417601994`}, {1.2139220723547204`, 2.118033988749895, 
+     0.42532540417601994`}, {-2.0645728807067605`, -0.5, 
+     1.2759762125280598`}, {-2.0645728807067605`, 0.5, 
+     1.2759762125280598`}, {-1.3763819204711736`, -1, 
+      1.8017073246471935`}, {-1.3763819204711736`, 1, 
+      1.8017073246471935`}, {-1.3763819204711736`, -1.6180339887498947`, \
+-1.27597621252806}, {-1.3763819204711736`, 
+     1.618033988749895, -1.27597621252806}, {-0.6881909602355868, -0.5, 
+     2.327438436766327}, {-0.6881909602355868, 0.5, 2.327438436766327}, {
+     1.3763819204711736`, -1, -1.8017073246471935`}, {
+     1.3763819204711736`, 1, -1.8017073246471935`}, {
+     1.3763819204711736`, -1.6180339887498947`, 1.2759762125280598`}, {
+     1.3763819204711736`, 1.618033988749895, 
+     1.2759762125280598`}, {-1.7013016167040798`, 0, -1.8017073246471935`}, {
+     1.7013016167040798`, 0, 
+      1.8017073246471935`}, {-1.2139220723547204`, -2.118033988749895, \
+-0.42532540417602}, {-1.2139220723547204`, 
+     2.118033988749895, -0.42532540417602}, {-1.9641671727636467`, \
+-0.8090169943749473, -1.27597621252806}, {-1.9641671727636467`, 
+     0.8090169943749475, -1.27597621252806}, {
+     2.0645728807067605`, -0.5, -1.27597621252806}, {2.0645728807067605`, 
+     0.5, -1.27597621252806}, {2.2270327288232132`, -1, -0.42532540417602}, {
+     2.2270327288232132`, 1, -0.42532540417602}, {2.3894925769396664`, -0.5, 
+     0.42532540417601994`}, {2.3894925769396664`, 0.5, 
+     0.42532540417601994`}, {-1.1135163644116066`, -1.8090169943749475`, 
+     1.2759762125280598`}, {-1.1135163644116066`, 1.8090169943749475`, 
+     1.2759762125280598`}, {
+     1.1135163644116066`, -1.8090169943749475`, -1.27597621252806}, {
+     1.1135163644116066`, 
+     1.8090169943749475`, -1.27597621252806}, {-2.3894925769396664`, -0.5, \
+-0.42532540417602}, {-2.3894925769396664`, 
+     0.5, -0.42532540417602}, {-1.6392474765307403`, -1.8090169943749475`, 
+     0.42532540417601994`}, {-1.6392474765307403`, 1.8090169943749475`, 
+     0.42532540417601994`}, {
+     1.6392474765307403`, -1.8090169943749475`, -0.42532540417602}, {
+     1.6392474765307403`, 1.8090169943749475`, -0.42532540417602}, {
+     1.9641671727636467`, -0.8090169943749473, 1.2759762125280598`}, {
+     1.9641671727636467`, 0.8090169943749475, 1.2759762125280598`}, {
+     0.85065080835204, 0, 2.327438436766327}, {-2.2270327288232132`, -1, 
+      0.42532540417601994`}, {-2.2270327288232132`, 1, 
+      0.42532540417601994`}, {-0.85065080835204, 
+      0, -2.327438436766327}, {-0.5257311121191336, -1.6180339887498947`, \
+-1.8017073246471935`}, {-0.5257311121191336, 
+     1.618033988749895, -1.8017073246471935`}, {
+     0.5257311121191336, -1.6180339887498947`, 1.8017073246471935`}, {
+     0.5257311121191336, 1.618033988749895, 1.8017073246471935`}}], 
+   Polygon3DBox[{{53, 11, 24, 23, 9}, {51, 39, 40, 52, 30}, {60, 28, 16, 12, 
+     2}, {20, 42, 48, 55, 18}, {19, 17, 54, 47, 41}, {1, 10, 15, 27, 59}, {36,
+      26, 44, 50, 38}, {4, 58, 22, 32, 8}, {34, 29, 33, 45, 46}, {21, 57, 3, 
+     6, 31}, {37, 49, 43, 25, 35}, {13, 5, 56, 7, 14}, {9, 59, 27, 51, 30, 
+     53}, {53, 30, 52, 28, 60, 11}, {11, 60, 2, 42, 20, 24}, {24, 20, 18, 17, 
+     19, 23}, {23, 19, 41, 1, 59, 9}, {13, 25, 43, 3, 57, 5}, {5, 57, 21, 33, 
+     29, 56}, {56, 29, 34, 22, 58, 7}, {7, 58, 4, 44, 26, 14}, {14, 26, 36, 
+     35, 25, 13}, {40, 38, 50, 16, 28, 52}, {16, 50, 44, 4, 8, 12}, {12, 8, 
+     32, 48, 42, 2}, {48, 32, 22, 34, 46, 55}, {55, 46, 45, 54, 17, 18}, {54, 
+     45, 33, 21, 31, 47}, {47, 31, 6, 10, 1, 41}, {10, 6, 3, 43, 49, 15}, {15,
+      49, 37, 39, 51, 27}, {39, 37, 35, 36, 38, 40}}]]]], "Output",
+ CellChangeTimes->{3.7590016596241727`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"PolyhedronData", "[", 
+  RowBox[{"\"\<TruncatedIcosahedron\>\"", ",", "\"\<NetImage\>\""}], 
+  "]"}]], "Code",
+ CellChangeTimes->{
+  3.759001599969442*^9, {3.759001631875407*^9, 3.7590016437593503`*^9}, {
+   3.75900167998779*^9, 3.7590016814552794`*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[
+  {RGBColor[1, 1, 0.85], EdgeForm[GrayLevel[0]], 
+   GraphicsComplexBox[
+    NCache[{{Rational[5, 2], 0}, {
+      Rational[1, 4] (9 - 5^Rational[1, 2]), 
+       Rational[1, 4] (10 - 2 5^Rational[1, 2])^Rational[1, 2]}, {
+      Rational[1, 4] (11 + 5^Rational[1, 2]), 
+       Rational[1, 4] (10 - 2 5^Rational[1, 2])^Rational[1, 2]}, {
+      2, Rational[1, 2] (5 + 2 5^Rational[1, 2])^Rational[1, 2]}, {
+      3, Rational[1, 2] (5 + 2 5^Rational[1, 2])^Rational[1, 2]}, {
+      5, Rational[1, 2] (5 + 2 5^Rational[1, 2])^Rational[1, 2]}, {
+      6, Rational[1, 2] (5 + 2 5^Rational[1, 2])^Rational[1, 2]}, {
+      8, Rational[1, 2] (5 + 2 5^Rational[1, 2])^Rational[1, 2]}, {
+      9, Rational[1, 2] (5 + 2 5^Rational[1, 2])^Rational[1, 2]}, {
+      11, Rational[1, 2] (5 + 2 5^Rational[1, 2])^Rational[1, 2]}, {
+      12, Rational[1, 2] (5 + 2 5^Rational[1, 2])^Rational[1, 2]}, {
+      14, Rational[1, 2] (5 + 2 5^Rational[1, 2])^Rational[1, 2]}, {
+      15, Rational[1, 2] (5 + 2 5^Rational[1, 2])^Rational[1, 2]}, {
+      Rational[3, 2], (
+        Rational[1, 2] (4 + 
+         5^Rational[1, 2] + (15 + 6 5^Rational[1, 2])^Rational[1, 2]))^
+       Rational[1, 2]}, {
+      Rational[7, 2], (
+        Rational[1, 2] (4 + 
+         5^Rational[1, 2] + (15 + 6 5^Rational[1, 2])^Rational[1, 2]))^
+       Rational[1, 2]}, {
+      Rational[9, 2], (
+        Rational[1, 2] (4 + 
+         5^Rational[1, 2] + (15 + 6 5^Rational[1, 2])^Rational[1, 2]))^
+       Rational[1, 2]}, {
+      Rational[13, 2], (
+        Rational[1, 2] (4 + 
+         5^Rational[1, 2] + (15 + 6 5^Rational[1, 2])^Rational[1, 2]))^
+       Rational[1, 2]}, {
+      Rational[15, 2], (
+        Rational[1, 2] (4 + 
+         5^Rational[1, 2] + (15 + 6 5^Rational[1, 2])^Rational[1, 2]))^
+       Rational[1, 2]}, {
+      Rational[19, 2], (
+        Rational[1, 2] (4 + 
+         5^Rational[1, 2] + (15 + 6 5^Rational[1, 2])^Rational[1, 2]))^
+       Rational[1, 2]}, {
+      Rational[21, 2], (
+        Rational[1, 2] (4 + 
+         5^Rational[1, 2] + (15 + 6 5^Rational[1, 2])^Rational[1, 2]))^
+       Rational[1, 2]}, {
+      Rational[25, 2], (
+        Rational[1, 2] (4 + 
+         5^Rational[1, 2] + (15 + 6 5^Rational[1, 2])^Rational[1, 2]))^
+       Rational[1, 2]}, {
+      Rational[27, 2], (
+        Rational[1, 2] (4 + 
+         5^Rational[1, 2] + (15 + 6 5^Rational[1, 2])^Rational[1, 2]))^
+       Rational[1, 2]}, {
+      Rational[31, 2], (
+        Rational[1, 2] (4 + 
+         5^Rational[1, 2] + (15 + 6 5^Rational[1, 2])^Rational[1, 2]))^
+       Rational[1, 2]}, {1, Rational[3, 2] 3^Rational[1, 2]}, {
+      4, Rational[3, 2] 3^Rational[1, 2]}, {
+      7, Rational[3, 2] 3^Rational[1, 2]}, {
+      10, Rational[3, 2] 3^Rational[1, 2]}, {
+      13, Rational[3, 2] 3^Rational[1, 2]}, {
+      Rational[1, 4] (3 - 5^Rational[1, 2]), 
+       Rational[
+        1, 2] (Rational[1, 2] (59 - 5^Rational[1, 2] + 
+          6 (30 - 6 5^Rational[1, 2])^Rational[1, 2]))^Rational[1, 2]}, {
+      Rational[1, 4] (5 + 5^Rational[1, 2]), 
+       Rational[
+        1, 2] (Rational[1, 2] (59 - 5^Rational[1, 2] + 
+          6 (30 - 6 5^Rational[1, 2])^Rational[1, 2]))^Rational[1, 2]}, {
+      Rational[1, 4] (15 - 5^Rational[1, 2]), 
+       Rational[
+        1, 2] (Rational[1, 2] (59 - 5^Rational[1, 2] + 
+          6 (30 - 6 5^Rational[1, 2])^Rational[1, 2]))^Rational[1, 2]}, {
+      Rational[1, 4] (17 + 5^Rational[1, 2]), 
+       Rational[
+        1, 2] (Rational[1, 2] (59 - 5^Rational[1, 2] + 
+          6 (30 - 6 5^Rational[1, 2])^Rational[1, 2]))^Rational[1, 2]}, {
+      Rational[1, 4] (27 - 5^Rational[1, 2]), 
+       Rational[
+        1, 2] (Rational[1, 2] (59 - 5^Rational[1, 2] + 
+          6 (30 - 6 5^Rational[1, 2])^Rational[1, 2]))^Rational[1, 2]}, {
+      Rational[1, 4] (29 + 5^Rational[1, 2]), 
+       Rational[
+        1, 2] (Rational[1, 2] (59 - 5^Rational[1, 2] + 
+          6 (30 - 6 5^Rational[1, 2])^Rational[1, 2]))^Rational[1, 2]}, {
+      Rational[1, 4] (39 - 5^Rational[1, 2]), 
+       Rational[
+        1, 2] (Rational[1, 2] (59 - 5^Rational[1, 2] + 
+          6 (30 - 6 5^Rational[1, 2])^Rational[1, 2]))^Rational[1, 2]}, {
+      Rational[1, 4] (41 + 5^Rational[1, 2]), 
+       Rational[
+        1, 2] (Rational[1, 2] (59 - 5^Rational[1, 2] + 
+          6 (30 - 6 5^Rational[1, 2])^Rational[1, 2]))^Rational[1, 2]}, {
+      Rational[1, 4] (51 - 5^Rational[1, 2]), 
+       Rational[
+        1, 2] (Rational[1, 2] (59 - 5^Rational[1, 2] + 
+          6 (30 - 6 5^Rational[1, 2])^Rational[1, 2]))^Rational[1, 2]}, {
+      Rational[1, 4] (53 + 5^Rational[1, 2]), 
+       Rational[
+        1, 2] (Rational[1, 2] (59 - 5^Rational[1, 2] + 
+          6 (30 - 6 5^Rational[1, 2])^Rational[1, 2]))^Rational[1, 2]}, {
+      2, (Rational[17, 4] + 
+        Rational[1, 2] 5^Rational[1, 2] + (15 + 6 5^Rational[1, 2])^
+         Rational[1, 2])^Rational[1, 2]}, {
+      3, (Rational[17, 4] + 
+        Rational[1, 2] 5^Rational[1, 2] + (15 + 6 5^Rational[1, 2])^
+         Rational[1, 2])^Rational[1, 2]}, {
+      5, (Rational[17, 4] + 
+        Rational[1, 2] 5^Rational[1, 2] + (15 + 6 5^Rational[1, 2])^
+         Rational[1, 2])^Rational[1, 2]}, {
+      6, (Rational[17, 4] + 
+        Rational[1, 2] 5^Rational[1, 2] + (15 + 6 5^Rational[1, 2])^
+         Rational[1, 2])^Rational[1, 2]}, {
+      8, (Rational[17, 4] + 
+        Rational[1, 2] 5^Rational[1, 2] + (15 + 6 5^Rational[1, 2])^
+         Rational[1, 2])^Rational[1, 2]}, {
+      9, (Rational[17, 4] + 
+        Rational[1, 2] 5^Rational[1, 2] + (15 + 6 5^Rational[1, 2])^
+         Rational[1, 2])^Rational[1, 2]}, {
+      11, (Rational[17, 4] + 
+        Rational[1, 2] 5^Rational[1, 2] + (15 + 6 5^Rational[1, 2])^
+         Rational[1, 2])^Rational[1, 2]}, {
+      12, (Rational[17, 4] + 
+        Rational[1, 2] 5^Rational[1, 2] + (15 + 6 5^Rational[1, 2])^
+         Rational[1, 2])^Rational[1, 2]}, {
+      14, (Rational[17, 4] + 
+        Rational[1, 2] 5^Rational[1, 2] + (15 + 6 5^Rational[1, 2])^
+         Rational[1, 2])^Rational[1, 2]}, {
+      15, (Rational[17, 4] + 
+        Rational[1, 2] 5^Rational[1, 2] + (15 + 6 5^Rational[1, 2])^
+         Rational[1, 2])^Rational[1, 2]}, {
+      Rational[1, 2], (
+        Rational[1, 2] (16 + 5^Rational[1, 2] + 
+         3 (15 + 6 5^Rational[1, 2])^Rational[1, 2]))^Rational[1, 2]}, {
+      Rational[3, 2], (
+        Rational[1, 2] (16 + 5^Rational[1, 2] + 
+         3 (15 + 6 5^Rational[1, 2])^Rational[1, 2]))^Rational[1, 2]}, {
+      Rational[7, 2], (
+        Rational[1, 2] (16 + 5^Rational[1, 2] + 
+         3 (15 + 6 5^Rational[1, 2])^Rational[1, 2]))^Rational[1, 2]}, {
+      Rational[9, 2], (
+        Rational[1, 2] (16 + 5^Rational[1, 2] + 
+         3 (15 + 6 5^Rational[1, 2])^Rational[1, 2]))^Rational[1, 2]}, {
+      Rational[13, 2], (
+        Rational[1, 2] (16 + 5^Rational[1, 2] + 
+         3 (15 + 6 5^Rational[1, 2])^Rational[1, 2]))^Rational[1, 2]}, {
+      Rational[15, 2], (
+        Rational[1, 2] (16 + 5^Rational[1, 2] + 
+         3 (15 + 6 5^Rational[1, 2])^Rational[1, 2]))^Rational[1, 2]}, {
+      Rational[19, 2], (
+        Rational[1, 2] (16 + 5^Rational[1, 2] + 
+         3 (15 + 6 5^Rational[1, 2])^Rational[1, 2]))^Rational[1, 2]}, {
+      Rational[21, 2], (
+        Rational[1, 2] (16 + 5^Rational[1, 2] + 
+         3 (15 + 6 5^Rational[1, 2])^Rational[1, 2]))^Rational[1, 2]}, {
+      Rational[25, 2], (
+        Rational[1, 2] (16 + 5^Rational[1, 2] + 
+         3 (15 + 6 5^Rational[1, 2])^Rational[1, 2]))^Rational[1, 2]}, {
+      Rational[27, 2], (
+        Rational[1, 2] (16 + 5^Rational[1, 2] + 
+         3 (15 + 6 5^Rational[1, 2])^Rational[1, 2]))^Rational[1, 2]}, {
+      Rational[31, 2], (
+        Rational[1, 2] (16 + 5^Rational[1, 2] + 
+         3 (15 + 6 5^Rational[1, 2])^Rational[1, 2]))^Rational[1, 2]}, {
+      0, Rational[
+        1, 2] (53 + 2 5^Rational[1, 2] + 
+         8 (15 + 6 5^Rational[1, 2])^Rational[1, 2])^Rational[1, 2]}, {
+      2, Rational[
+        1, 2] (53 + 2 5^Rational[1, 2] + 
+         8 (15 + 6 5^Rational[1, 2])^Rational[1, 2])^Rational[1, 2]}, {
+      3, Rational[
+        1, 2] (53 + 2 5^Rational[1, 2] + 
+         8 (15 + 6 5^Rational[1, 2])^Rational[1, 2])^Rational[1, 2]}, {
+      5, Rational[
+        1, 2] (53 + 2 5^Rational[1, 2] + 
+         8 (15 + 6 5^Rational[1, 2])^Rational[1, 2])^Rational[1, 2]}, {
+      6, Rational[
+        1, 2] (53 + 2 5^Rational[1, 2] + 
+         8 (15 + 6 5^Rational[1, 2])^Rational[1, 2])^Rational[1, 2]}, {
+      8, Rational[
+        1, 2] (53 + 2 5^Rational[1, 2] + 
+         8 (15 + 6 5^Rational[1, 2])^Rational[1, 2])^Rational[1, 2]}, {
+      9, Rational[
+        1, 2] (53 + 2 5^Rational[1, 2] + 
+         8 (15 + 6 5^Rational[1, 2])^Rational[1, 2])^Rational[1, 2]}, {
+      11, Rational[
+        1, 2] (53 + 2 5^Rational[1, 2] + 
+         8 (15 + 6 5^Rational[1, 2])^Rational[1, 2])^Rational[1, 2]}, {
+      12, Rational[
+        1, 2] (53 + 2 5^Rational[1, 2] + 
+         8 (15 + 6 5^Rational[1, 2])^Rational[1, 2])^Rational[1, 2]}, {
+      14, Rational[
+        1, 2] (53 + 2 5^Rational[1, 2] + 
+         8 (15 + 6 5^Rational[1, 2])^Rational[1, 2])^Rational[1, 2]}, {
+      15, 
+       Rational[
+        1, 2] (53 + 2 5^Rational[1, 2] + 
+         8 (15 + 6 5^Rational[1, 2])^Rational[1, 2])^Rational[1, 2]}, {
+      Rational[1, 2], (
+        Rational[1, 2] (40 + 5^Rational[1, 2] + 
+         5 (15 + 6 5^Rational[1, 2])^Rational[1, 2]))^Rational[1, 2]}, {
+      Rational[3, 2], (
+        Rational[1, 2] (40 + 5^Rational[1, 2] + 
+         5 (15 + 6 5^Rational[1, 2])^Rational[1, 2]))^Rational[1, 2]}, {
+      Rational[7, 2], (
+        Rational[1, 2] (40 + 5^Rational[1, 2] + 
+         5 (15 + 6 5^Rational[1, 2])^Rational[1, 2]))^Rational[1, 2]}, {
+      Rational[9, 2], (
+        Rational[1, 2] (40 + 5^Rational[1, 2] + 
+         5 (15 + 6 5^Rational[1, 2])^Rational[1, 2]))^Rational[1, 2]}, {
+      Rational[13, 2], (
+        Rational[1, 2] (40 + 5^Rational[1, 2] + 
+         5 (15 + 6 5^Rational[1, 2])^Rational[1, 2]))^Rational[1, 2]}, {
+      Rational[15, 2], (
+        Rational[1, 2] (40 + 5^Rational[1, 2] + 
+         5 (15 + 6 5^Rational[1, 2])^Rational[1, 2]))^Rational[1, 2]}, {
+      Rational[19, 2], (
+        Rational[1, 2] (40 + 5^Rational[1, 2] + 
+         5 (15 + 6 5^Rational[1, 2])^Rational[1, 2]))^Rational[1, 2]}, {
+      Rational[21, 2], (
+        Rational[1, 2] (40 + 5^Rational[1, 2] + 
+         5 (15 + 6 5^Rational[1, 2])^Rational[1, 2]))^Rational[1, 2]}, {
+      Rational[25, 2], (
+        Rational[1, 2] (40 + 5^Rational[1, 2] + 
+         5 (15 + 6 5^Rational[1, 2])^Rational[1, 2]))^Rational[1, 2]}, {
+      Rational[27, 2], (
+        Rational[1, 2] (40 + 5^Rational[1, 2] + 
+         5 (15 + 6 5^Rational[1, 2])^Rational[1, 2]))^Rational[1, 2]}, {
+      Rational[1, 4] (9 - 5^Rational[1, 2]), (
+        Rational[11, 8] (11 + 5^Rational[1, 2]) + (150 + 66 5^Rational[1, 2])^
+         Rational[1, 2])^Rational[1, 2]}, {
+      Rational[1, 4] (11 + 5^Rational[1, 2]), (
+        Rational[11, 8] (11 + 5^Rational[1, 2]) + (150 + 66 5^Rational[1, 2])^
+         Rational[1, 2])^Rational[1, 2]}, {
+      Rational[1, 4] (21 - 5^Rational[1, 2]), (
+        Rational[11, 8] (11 + 5^Rational[1, 2]) + (150 + 66 5^Rational[1, 2])^
+         Rational[1, 2])^Rational[1, 2]}, {
+      Rational[1, 4] (23 + 5^Rational[1, 2]), (
+        Rational[11, 8] (11 + 5^Rational[1, 2]) + (150 + 66 5^Rational[1, 2])^
+         Rational[1, 2])^Rational[1, 2]}, {
+      Rational[1, 4] (33 - 5^Rational[1, 2]), (
+        Rational[11, 8] (11 + 5^Rational[1, 2]) + (150 + 66 5^Rational[1, 2])^
+         Rational[1, 2])^Rational[1, 2]}, {
+      Rational[1, 4] (35 + 5^Rational[1, 2]), (
+        Rational[11, 8] (11 + 5^Rational[1, 2]) + (150 + 66 5^Rational[1, 2])^
+         Rational[1, 2])^Rational[1, 2]}, {
+      Rational[1, 4] (45 - 5^Rational[1, 2]), (
+        Rational[11, 8] (11 + 5^Rational[1, 2]) + (150 + 66 5^Rational[1, 2])^
+         Rational[1, 2])^Rational[1, 2]}, {
+      Rational[1, 4] (47 + 5^Rational[1, 2]), (
+        Rational[11, 8] (11 + 5^Rational[1, 2]) + (150 + 66 5^Rational[1, 2])^
+         Rational[1, 2])^Rational[1, 2]}, {
+      Rational[1, 4] (57 - 5^Rational[1, 2]), (
+        Rational[11, 8] (11 + 5^Rational[1, 2]) + (150 + 66 5^Rational[1, 2])^
+         Rational[1, 2])^Rational[1, 2]}, {
+      Rational[1, 4] (59 + 5^Rational[1, 2]), (
+        Rational[11, 8] (11 + 5^Rational[1, 2]) + (150 + 66 5^Rational[1, 2])^
+         Rational[1, 2])^Rational[1, 2]}, {
+      Rational[5, 2], (17 + 2 5^Rational[1, 2] + 
+        4 (15 + 6 5^Rational[1, 2])^Rational[1, 2])^Rational[1, 2]}, {
+      Rational[11, 2], (17 + 2 5^Rational[1, 2] + 
+        4 (15 + 6 5^Rational[1, 2])^Rational[1, 2])^Rational[1, 2]}, {
+      Rational[17, 2], (17 + 2 5^Rational[1, 2] + 
+        4 (15 + 6 5^Rational[1, 2])^Rational[1, 2])^Rational[1, 2]}, {
+      Rational[23, 2], (17 + 2 5^Rational[1, 2] + 
+        4 (15 + 6 5^Rational[1, 2])^Rational[1, 2])^Rational[1, 2]}, {
+      Rational[29, 2], (17 + 2 5^Rational[1, 2] + 
+        4 (15 + 6 5^Rational[1, 2])^Rational[1, 2])^Rational[1, 2]}, {
+      0, (Rational[113, 4] + Rational[1, 2] 5^Rational[1, 2] + 
+        3 (15 + 6 5^Rational[1, 2])^Rational[1, 2])^Rational[1, 2]}, {
+      2, (Rational[113, 4] + Rational[1, 2] 5^Rational[1, 2] + 
+        3 (15 + 6 5^Rational[1, 2])^Rational[1, 2])^Rational[1, 2]}, {
+      3, (Rational[113, 4] + Rational[1, 2] 5^Rational[1, 2] + 
+        3 (15 + 6 5^Rational[1, 2])^Rational[1, 2])^Rational[1, 2]}, {
+      5, (Rational[113, 4] + Rational[1, 2] 5^Rational[1, 2] + 
+        3 (15 + 6 5^Rational[1, 2])^Rational[1, 2])^Rational[1, 2]}, {
+      6, (Rational[113, 4] + Rational[1, 2] 5^Rational[1, 2] + 
+        3 (15 + 6 5^Rational[1, 2])^Rational[1, 2])^Rational[1, 2]}, {
+      8, (Rational[113, 4] + Rational[1, 2] 5^Rational[1, 2] + 
+        3 (15 + 6 5^Rational[1, 2])^Rational[1, 2])^Rational[1, 2]}, {
+      9, (Rational[113, 4] + Rational[1, 2] 5^Rational[1, 2] + 
+        3 (15 + 6 5^Rational[1, 2])^Rational[1, 2])^Rational[1, 2]}, {
+      11, (Rational[113, 4] + Rational[1, 2] 5^Rational[1, 2] + 
+        3 (15 + 6 5^Rational[1, 2])^Rational[1, 2])^Rational[1, 2]}, {
+      12, (Rational[113, 4] + Rational[1, 2] 5^Rational[1, 2] + 
+        3 (15 + 6 5^Rational[1, 2])^Rational[1, 2])^Rational[1, 2]}, {
+      14, (Rational[113, 4] + Rational[1, 2] 5^Rational[1, 2] + 
+        3 (15 + 6 5^Rational[1, 2])^Rational[1, 2])^Rational[1, 2]}, {
+      Rational[1, 2], (
+        Rational[1, 2] (76 + 5^Rational[1, 2] + 
+         7 (15 + 6 5^Rational[1, 2])^Rational[1, 2]))^Rational[1, 2]}, {
+      Rational[3, 2], (
+        Rational[1, 2] (76 + 5^Rational[1, 2] + 
+         7 (15 + 6 5^Rational[1, 2])^Rational[1, 2]))^Rational[1, 2]}, {
+      Rational[7, 2], (
+        Rational[1, 2] (76 + 5^Rational[1, 2] + 
+         7 (15 + 6 5^Rational[1, 2])^Rational[1, 2]))^Rational[1, 2]}, {
+      Rational[9, 2], (
+        Rational[1, 2] (76 + 5^Rational[1, 2] + 
+         7 (15 + 6 5^Rational[1, 2])^Rational[1, 2]))^Rational[1, 2]}, {
+      Rational[13, 2], (
+        Rational[1, 2] (76 + 5^Rational[1, 2] + 
+         7 (15 + 6 5^Rational[1, 2])^Rational[1, 2]))^Rational[1, 2]}, {
+      Rational[15, 2], (
+        Rational[1, 2] (76 + 5^Rational[1, 2] + 
+         7 (15 + 6 5^Rational[1, 2])^Rational[1, 2]))^Rational[1, 2]}, {
+      Rational[19, 2], (
+        Rational[1, 2] (76 + 5^Rational[1, 2] + 
+         7 (15 + 6 5^Rational[1, 2])^Rational[1, 2]))^Rational[1, 2]}, {
+      Rational[21, 2], (
+        Rational[1, 2] (76 + 5^Rational[1, 2] + 
+         7 (15 + 6 5^Rational[1, 2])^Rational[1, 2]))^Rational[1, 2]}, {
+      Rational[25, 2], (
+        Rational[1, 2] (76 + 5^Rational[1, 2] + 
+         7 (15 + 6 5^Rational[1, 2])^Rational[1, 2]))^Rational[1, 2]}, {
+      Rational[
+       27, 2], (
+        Rational[1, 2] (76 + 5^Rational[1, 2] + 
+         7 (15 + 6 5^Rational[1, 2])^Rational[1, 2]))^Rational[1, 2]}, {
+      Rational[1, 4] (15 - 5^Rational[1, 2]), 
+       Rational[
+        1, 4] (22 (29 + 5^Rational[1, 2]) + 
+         28 (150 + 66 5^Rational[1, 2])^Rational[1, 2])^Rational[1, 2]}, {
+      Rational[1, 4] (17 + 5^Rational[1, 2]), 
+       Rational[
+        1, 4] (22 (29 + 5^Rational[1, 2]) + 
+         28 (150 + 66 5^Rational[1, 2])^Rational[1, 2])^Rational[1, 2]}, {
+      4, (Rational[167, 4] + 2 5^Rational[1, 2] + 
+        7 (15 + 6 5^Rational[1, 2])^Rational[1, 2])^Rational[1, 2]}}, {{
+      2.5, 0}, {1.6909830056250525`, 0.5877852522924731}, {
+      3.3090169943749475`, 0.5877852522924731}, {2, 1.5388417685876268`}, {
+      3, 1.5388417685876268`}, {5, 1.5388417685876268`}, {
+      6, 1.5388417685876268`}, {8, 1.5388417685876268`}, {
+      9, 1.5388417685876268`}, {11, 1.5388417685876268`}, {
+      12, 1.5388417685876268`}, {14, 1.5388417685876268`}, {
+      15, 1.5388417685876268`}, {1.5, 2.4048671723720654`}, {3.5, 
+      2.4048671723720654`}, {4.5, 2.4048671723720654`}, {6.5, 
+      2.4048671723720654`}, {7.5, 2.4048671723720654`}, {9.5, 
+      2.4048671723720654`}, {10.5, 2.4048671723720654`}, {12.5, 
+      2.4048671723720654`}, {13.5, 2.4048671723720654`}, {15.5, 
+      2.4048671723720654`}, {1, 2.598076211353316}, {4, 2.598076211353316}, {
+      7, 2.598076211353316}, {10, 2.598076211353316}, {
+      13, 2.598076211353316}, {0.19098300562505255`, 3.1858614636457894`}, {
+      1.8090169943749475`, 3.1858614636457894`}, {3.1909830056250525`, 
+      3.1858614636457894`}, {4.8090169943749475`, 3.1858614636457894`}, {
+      6.1909830056250525`, 3.1858614636457894`}, {7.8090169943749475`, 
+      3.1858614636457894`}, {9.190983005625053, 3.1858614636457894`}, {
+      10.809016994374947`, 3.1858614636457894`}, {12.190983005625053`, 
+      3.1858614636457894`}, {13.809016994374947`, 3.1858614636457894`}, {
+      2, 3.2708925761565038`}, {3, 3.2708925761565038`}, {
+      5, 3.2708925761565038`}, {6, 3.2708925761565038`}, {
+      8, 3.2708925761565038`}, {9, 3.2708925761565038`}, {
+      11, 3.2708925761565038`}, {12, 3.2708925761565038`}, {
+      14, 3.2708925761565038`}, {15, 3.2708925761565038`}, {0.5, 
+      4.136917979940943}, {1.5, 4.136917979940943}, {3.5, 
+      4.136917979940943}, {4.5, 4.136917979940943}, {6.5, 
+      4.136917979940943}, {7.5, 4.136917979940943}, {9.5, 
+      4.136917979940943}, {10.5, 4.136917979940943}, {12.5, 
+      4.136917979940943}, {13.5, 4.136917979940943}, {15.5, 
+      4.136917979940943}, {0, 5.002943383725381}, {2, 5.002943383725381}, {
+      3, 5.002943383725381}, {5, 5.002943383725381}, {6, 5.002943383725381}, {
+      8, 5.002943383725381}, {9, 5.002943383725381}, {
+      11, 5.002943383725381}, {12, 5.002943383725381}, {
+      14, 5.002943383725381}, {15, 5.002943383725381}, {0.5, 
+      5.86896878750982}, {1.5, 5.86896878750982}, {3.5, 5.86896878750982}, {
+      4.5, 5.86896878750982}, {6.5, 5.86896878750982}, {7.5, 
+      5.86896878750982}, {9.5, 5.86896878750982}, {10.5, 5.86896878750982}, {
+      12.5, 5.86896878750982}, {13.5, 5.86896878750982}, {1.6909830056250525`,
+       5.953999900020535}, {3.3090169943749475`, 5.953999900020535}, {
+      4.6909830056250525`, 5.953999900020535}, {6.3090169943749475`, 
+      5.953999900020535}, {7.6909830056250525`, 5.953999900020535}, {
+      9.309016994374947, 5.953999900020535}, {10.690983005625053`, 
+      5.953999900020535}, {12.309016994374947`, 5.953999900020535}, {
+      13.690983005625053`, 5.953999900020535}, {15.309016994374947`, 
+      5.953999900020535}, {2.5, 6.5417851523130075`}, {5.5, 
+      6.5417851523130075`}, {8.5, 6.5417851523130075`}, {11.5, 
+      6.5417851523130075`}, {14.5, 6.5417851523130075`}, {
+      0, 6.734994191294259}, {2, 6.734994191294259}, {3, 6.734994191294259}, {
+      5, 6.734994191294259}, {6, 6.734994191294259}, {8, 6.734994191294259}, {
+      9, 6.734994191294259}, {11, 6.734994191294259}, {
+      12, 6.734994191294259}, {14, 6.734994191294259}, {0.5, 
+      7.601019595078697}, {1.5, 7.601019595078697}, {3.5, 
+      7.601019595078697}, {4.5, 7.601019595078697}, {6.5, 
+      7.601019595078697}, {7.5, 7.601019595078697}, {9.5, 
+      7.601019595078697}, {10.5, 7.601019595078697}, {12.5, 
+      7.601019595078697}, {13.5, 7.601019595078697}, {3.1909830056250525`, 
+      8.55207611137385}, {4.8090169943749475`, 8.55207611137385}, {
+      4, 9.139861363666324}}], 
+    PolygonBox[{{30, 50, 49, 29, 24}, {50, 61, 72, 71, 60, 49}, {72, 97, 107, 
+      106, 96, 71}, {5, 15, 40, 39, 14, 4}, {40, 51, 62, 61, 50, 39}, {62, 82,
+       91, 81, 61}, {32, 52, 51, 31, 25}, {52, 63, 74, 73, 62, 51}, {74, 99, 
+      109, 108, 98, 73}, {7, 17, 42, 41, 16, 6}, {42, 53, 64, 63, 52, 41}, {
+      64, 84, 92, 83, 63}, {34, 54, 53, 33, 26}, {54, 65, 76, 75, 64, 53}, {
+      76, 101, 111, 110, 100, 75}, {9, 19, 44, 43, 18, 8}, {44, 55, 66, 65, 
+      54, 43}, {66, 86, 93, 85, 65}, {36, 56, 55, 35, 27}, {56, 67, 78, 77, 
+      66, 55}, {78, 103, 113, 112, 102, 77}, {11, 21, 46, 45, 20, 10}, {46, 
+      57, 68, 67, 56, 45}, {68, 88, 94, 87, 67}, {38, 58, 57, 37, 28}, {58, 
+      69, 80, 79, 68, 57}, {80, 105, 115, 114, 104, 79}, {13, 23, 48, 47, 22, 
+      12}, {48, 59, 70, 69, 58, 47}, {70, 90, 95, 89, 69}, {3, 5, 4, 2, 1}, {
+      109, 117, 118, 116, 108}}]]}]], "Output",
+ CellChangeTimes->{{3.7590016664816937`*^9, 3.759001684399973*^9}}]
+}, Open  ]],
+
+Cell["6 kvadratov in 32 enakostrani\[CHacek]nih trikotnikov", "Item",
+ CellChangeTimes->{{3.7590017929807367`*^9, 3.7590018086419506`*^9}, {
+  3.7590019329535055`*^9, 3.759001941338374*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"PolyhedronData", "[", "\"\<SnubCube\>\"", "]"}]], "Code",
+ CellChangeTimes->{{3.7590018165311975`*^9, 3.7590018504655285`*^9}}],
+
+Cell[BoxData[
+ Graphics3DBox[
+  GraphicsComplex3DBox[
+   NCache[{{Root[-1 - 12 #^2 - 32 #^4 + 32 #^6& , 1, 0], 
+      Root[-1 + 12 #^2 - 32 #^4 + 32 #^6& , 1, 0], 
+      Root[-1 + 4 #^2 - 16 #^4 + 32 #^6& , 1, 0]}, {
+     Root[-1 - 12 #^2 - 32 #^4 + 32 #^6& , 1, 0], 
+      Root[-1 + 12 #^2 - 32 #^4 + 32 #^6& , 2, 0], 
+      Root[-1 + 4 #^2 - 16 #^4 + 32 #^6& , 2, 0]}, {
+     Root[-1 - 12 #^2 - 32 #^4 + 32 #^6& , 1, 0], 
+      Root[-1 + 4 #^2 - 16 #^4 + 32 #^6& , 1, 0], 
+      Root[-1 + 12 #^2 - 32 #^4 + 32 #^6& , 2, 0]}, {
+     Root[-1 - 12 #^2 - 32 #^4 + 32 #^6& , 1, 0], 
+      Root[-1 + 4 #^2 - 16 #^4 + 32 #^6& , 2, 0], 
+      Root[-1 + 12 #^2 - 32 #^4 + 32 #^6& , 1, 0]}, {
+     Root[-1 - 12 #^2 - 32 #^4 + 32 #^6& , 2, 0], 
+      Root[-1 + 12 #^2 - 32 #^4 + 32 #^6& , 1, 0], 
+      Root[-1 + 4 #^2 - 16 #^4 + 32 #^6& , 2, 0]}, {
+     Root[-1 - 12 #^2 - 32 #^4 + 32 #^6& , 2, 0], 
+      Root[-1 + 12 #^2 - 32 #^4 + 32 #^6& , 2, 0], 
+      Root[-1 + 4 #^2 - 16 #^4 + 32 #^6& , 1, 0]}, {
+     Root[-1 - 12 #^2 - 32 #^4 + 32 #^6& , 2, 0], 
+      Root[-1 + 4 #^2 - 16 #^4 + 32 #^6& , 1, 0], 
+      Root[-1 + 12 #^2 - 32 #^4 + 32 #^6& , 1, 0]}, {
+     Root[-1 - 12 #^2 - 32 #^4 + 32 #^6& , 2, 0], 
+      Root[-1 + 4 #^2 - 16 #^4 + 32 #^6& , 2, 0], 
+      Root[-1 + 12 #^2 - 32 #^4 + 32 #^6& , 2, 0]}, {
+     Root[-1 + 12 #^2 - 32 #^4 + 32 #^6& , 1, 0], 
+      Root[-1 - 12 #^2 - 32 #^4 + 32 #^6& , 1, 0], 
+      Root[-1 + 4 #^2 - 16 #^4 + 32 #^6& , 2, 0]}, {
+     Root[-1 + 12 #^2 - 32 #^4 + 32 #^6& , 1, 0], 
+      Root[-1 - 12 #^2 - 32 #^4 + 32 #^6& , 2, 0], 
+      Root[-1 + 4 #^2 - 16 #^4 + 32 #^6& , 1, 0]}, {
+     Root[-1 + 12 #^2 - 32 #^4 + 32 #^6& , 1, 0], 
+      Root[-1 + 4 #^2 - 16 #^4 + 32 #^6& , 1, 0], 
+      Root[-1 - 12 #^2 - 32 #^4 + 32 #^6& , 1, 0]}, {
+     Root[-1 + 12 #^2 - 32 #^4 + 32 #^6& , 1, 0], 
+      Root[-1 + 4 #^2 - 16 #^4 + 32 #^6& , 2, 0], 
+      Root[-1 - 12 #^2 - 32 #^4 + 32 #^6& , 2, 0]}, {
+     Root[-1 + 12 #^2 - 32 #^4 + 32 #^6& , 2, 0], 
+      Root[-1 - 12 #^2 - 32 #^4 + 32 #^6& , 1, 0], 
+      Root[-1 + 4 #^2 - 16 #^4 + 32 #^6& , 1, 0]}, {
+     Root[-1 + 12 #^2 - 32 #^4 + 32 #^6& , 2, 0], 
+      Root[-1 - 12 #^2 - 32 #^4 + 32 #^6& , 2, 0], 
+      Root[-1 + 4 #^2 - 16 #^4 + 32 #^6& , 2, 0]}, {
+     Root[-1 + 12 #^2 - 32 #^4 + 32 #^6& , 2, 0], 
+      Root[-1 + 4 #^2 - 16 #^4 + 32 #^6& , 1, 0], 
+      Root[-1 - 12 #^2 - 32 #^4 + 32 #^6& , 2, 0]}, {
+     Root[-1 + 12 #^2 - 32 #^4 + 32 #^6& , 2, 0], 
+      Root[-1 + 4 #^2 - 16 #^4 + 32 #^6& , 2, 0], 
+      Root[-1 - 12 #^2 - 32 #^4 + 32 #^6& , 1, 0]}, {
+     Root[-1 + 4 #^2 - 16 #^4 + 32 #^6& , 1, 0], 
+      Root[-1 - 12 #^2 - 32 #^4 + 32 #^6& , 1, 0], 
+      Root[-1 + 12 #^2 - 32 #^4 + 32 #^6& , 1, 0]}, {
+     Root[-1 + 4 #^2 - 16 #^4 + 32 #^6& , 1, 0], 
+      Root[-1 - 12 #^2 - 32 #^4 + 32 #^6& , 2, 0], 
+      Root[-1 + 12 #^2 - 32 #^4 + 32 #^6& , 2, 0]}, {
+     Root[-1 + 4 #^2 - 16 #^4 + 32 #^6& , 1, 0], 
+      Root[-1 + 12 #^2 - 32 #^4 + 32 #^6& , 1, 0], 
+      Root[-1 - 12 #^2 - 32 #^4 + 32 #^6& , 2, 0]}, {
+     Root[-1 + 4 #^2 - 16 #^4 + 32 #^6& , 1, 0], 
+      Root[-1 + 12 #^2 - 32 #^4 + 32 #^6& , 2, 0], 
+      Root[-1 - 12 #^2 - 32 #^4 + 32 #^6& , 1, 0]}, {
+     Root[-1 + 4 #^2 - 16 #^4 + 32 #^6& , 2, 0], 
+      Root[-1 - 12 #^2 - 32 #^4 + 32 #^6& , 1, 0], 
+      Root[-1 + 12 #^2 - 32 #^4 + 32 #^6& , 2, 0]}, {
+     Root[-1 + 4 #^2 - 16 #^4 + 32 #^6& , 2, 0], 
+      Root[-1 - 12 #^2 - 32 #^4 + 32 #^6& , 2, 0], 
+      Root[-1 + 12 #^2 - 32 #^4 + 32 #^6& , 1, 0]}, {
+     Root[-1 + 4 #^2 - 16 #^4 + 32 #^6& , 2, 0], 
+      Root[-1 + 12 #^2 - 32 #^4 + 32 #^6& , 1, 0], 
+      Root[-1 - 12 #^2 - 32 #^4 + 32 #^6& , 1, 0]}, {
+     Root[-1 + 4 #^2 - 16 #^4 + 32 #^6& , 2, 0], 
+      Root[-1 + 12 #^2 - 32 #^4 + 32 #^6& , 2, 0], 
+      Root[-1 - 12 #^2 - 32 #^4 + 32 #^6& , 2, 0]}}, CompressedData["
+1:eJxTTMoPSmViYGCQAGJmIG564COl6vFpf9zH59cPzb26P1NghqnYw8f7YeKx
+EHF7qLg9TBymDiaPJm4PM68RIm6PZr49TBzNfLh6GB/dHJh+mD6YPCH70c1D
+9ych9+HyNy53ofuHUDjiigdc4YTLf7jiA1d84oofXOGK7m8AYj86Ng==
+    "]], Polygon3DBox[{{3, 1, 17}, {3, 17, 9}, {3, 19, 2}, {3, 9, 19}, {1, 4, 
+     20}, {1, 20, 11}, {1, 11, 17}, {2, 19, 12}, {2, 18, 4}, {2, 12, 18}, {4, 
+     18, 10}, {4, 10, 20}, {17, 11, 13}, {19, 9, 15}, {18, 12, 14}, {20, 10, 
+     16}, {9, 21, 15}, {11, 23, 13}, {12, 24, 14}, {10, 22, 16}, {13, 23, 
+     7}, {13, 7, 21}, {15, 21, 5}, {15, 5, 24}, {16, 22, 6}, {16, 6, 23}, {14,
+      24, 8}, {14, 8, 22}, {21, 7, 5}, {23, 6, 7}, {24, 5, 8}, {22, 8, 6}, {1,
+      3, 2, 4}, {21, 9, 17, 13}, {24, 12, 19, 15}, {10, 18, 14, 22}, {11, 20, 
+     16, 23}, {8, 5, 7, 6}}]]]], "Output",
+ CellChangeTimes->{3.7590018635228596`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"PolyhedronData", "[", 
+  RowBox[{"\"\<SnubCube\>\"", ",", "\"\<NetImage\>\""}], "]"}]], "Code",
+ CellChangeTimes->{{3.7590018581810894`*^9, 3.759001861103525*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[
+  {RGBColor[1, 1, 0.85], EdgeForm[GrayLevel[0]], 
+   GraphicsComplexBox[
+    NCache[{{0, Rational[1, 2] + 3^Rational[1, 2]}, {
+      0, Rational[3, 2] + 3^Rational[1, 2]}, {
+      Rational[1, 2] 3^Rational[1, 2], 3^Rational[1, 2]}, {
+      Rational[1, 2] 3^Rational[1, 2], 1 + 3^Rational[1, 2]}, {
+      Rational[1, 2] (1 + 3^Rational[1, 2]), Rational[1, 2] 
+       3^Rational[1, 2]}, {
+      Rational[1, 2] (1 + 3^Rational[1, 2]), 1 + 
+       Rational[3, 2] 3^Rational[1, 2]}, {
+      Rational[1, 2] (2 + 3^Rational[1, 2]), 3^Rational[1, 2]}, {
+      Rational[1, 2] (2 + 3^Rational[1, 2]), 1 + 3^Rational[1, 2]}, {
+      Rational[1, 2] (2 + 3^Rational[1, 2]), 2 + 3^Rational[1, 2]}, {
+      1 + 3^Rational[1, 2], Rational[-1, 2] + 3^Rational[1, 2]}, {
+      1 + 3^Rational[1, 2], Rational[1, 2] + 3^Rational[1, 2]}, {
+      1 + 3^Rational[1, 2], Rational[3, 2] + 3^Rational[1, 2]}, {
+      Rational[3, 2] + 3^Rational[1, 2], 
+       Rational[1, 2] (1 + 3^Rational[1, 2])}, {
+      Rational[3, 2] + 3^Rational[1, 2], 
+       Rational[3, 2] (1 + 3^Rational[1, 2])}, {
+      Rational[3, 2] + 3^Rational[1, 2], 
+       Rational[1, 2] (5 + 3 3^Rational[1, 2])}, {
+      2 + 3^Rational[1, 2], Rational[1, 2] + 3^Rational[1, 2]}, {
+      2 + 3^Rational[1, 2], Rational[3, 2] + 3^Rational[1, 2]}, {
+      2 + 3^Rational[1, 2], Rational[5, 2] + 3^Rational[1, 2]}, {
+      Rational[3, 2] (1 + 3^Rational[1, 2]), 2 + 
+       Rational[3, 2] 3^Rational[1, 2]}, {
+      Rational[3, 2] (1 + 3^Rational[1, 2]), 
+       Rational[3, 2] (2 + 3^Rational[1, 2])}, {
+      Rational[5, 2] + 3^Rational[1, 2], 
+       Rational[1, 2] (1 + 3^Rational[1, 2])}, {
+      2 + Rational[3, 2] 3^Rational[1, 2], 3^Rational[1, 2]}, {
+      2 + Rational[3, 2] 3^Rational[1, 2], 1 + 3^Rational[1, 2]}, {
+      2 + Rational[3, 2] 3^Rational[1, 2], 2 + 3^Rational[1, 2]}, {
+      2 + Rational[3, 2] 3^Rational[1, 2], 3 + 2 3^Rational[1, 2]}, {
+      Rational[1, 2] (5 + 3 3^Rational[1, 2]), Rational[1, 2] 
+       3^Rational[1, 2]}, {
+      Rational[1, 2] (5 + 3 3^Rational[1, 2]), 
+       Rational[1, 2] (2 + 3^Rational[1, 2])}, {
+      Rational[1, 2] (5 + 3 3^Rational[1, 2]), 2 + 
+       Rational[3, 2] 3^Rational[1, 2]}, {
+      Rational[1, 2] (5 + 3 3^Rational[1, 2]), 
+       Rational[3, 2] (2 + 3^Rational[1, 2])}, {
+      Rational[3, 2] (2 + 3^Rational[1, 2]), 0}, {
+      Rational[3, 2] (2 + 3^Rational[1, 2]), 1 + 3^Rational[1, 2]}, {
+      Rational[3, 2] (2 + 3^Rational[1, 2]), 2 + 3^Rational[1, 2]}, {
+      Rational[3, 2] (2 + 3^Rational[1, 2]), 3 + 3^Rational[1, 2]}, {
+      Rational[5, 2] + 2 3^Rational[1, 2], 
+       Rational[1, 2] (5 + 3 3^Rational[1, 2])}, {
+      Rational[1, 2] (7 + 3 3^Rational[1, 2]), Rational[1, 2] 
+       3^Rational[1, 2]}, {
+      Rational[1, 2] (7 + 3 3^Rational[1, 2]), 
+       Rational[1, 2] (2 + 3^Rational[1, 2])}, {
+      3 + 2 3^Rational[1, 2], Rational[1, 2] + 3^Rational[1, 2]}, {
+      3 + 2 3^Rational[1, 2], Rational[3, 2] + 3^Rational[1, 2]}, {
+      3 + 2 3^Rational[1, 2], Rational[5, 2] + 3^Rational[1, 2]}, {
+      Rational[7, 2] + 2 3^Rational[1, 2], 
+       Rational[1, 2] (1 + 3^Rational[1, 2])}, {
+      Rational[7, 2] + 2 3^Rational[1, 2], 
+       Rational[1, 2] (3 + 3^Rational[1, 2])}, {
+      Rational[7, 2] + 2 3^Rational[1, 2], 
+       Rational[1, 2] (5 + 3 3^Rational[1, 2])}, {
+      2 (2 + 3^Rational[1, 2]), Rational[3, 2] + 3^Rational[1, 2]}, {
+      2 (2 + 3^Rational[1, 2]), Rational[5, 2] + 3^Rational[1, 2]}, {
+      4 + Rational[5, 2] 3^Rational[1, 2], 1 + 3^Rational[1, 2]}, {
+      4 + Rational[5, 2] 3^Rational[1, 2], 2 + 3^Rational[1, 2]}}, {{
+      0, 2.232050807568877}, {0, 3.232050807568877}, {0.8660254037844386, 
+      1.7320508075688772`}, {0.8660254037844386, 2.732050807568877}, {
+      1.3660254037844386`, 0.8660254037844386}, {1.3660254037844386`, 
+      3.598076211353316}, {1.8660254037844386`, 1.7320508075688772`}, {
+      1.8660254037844386`, 2.732050807568877}, {1.8660254037844386`, 
+      3.732050807568877}, {2.732050807568877, 1.2320508075688772`}, {
+      2.732050807568877, 2.232050807568877}, {2.732050807568877, 
+      3.232050807568877}, {3.232050807568877, 1.3660254037844386`}, {
+      3.232050807568877, 4.098076211353316}, {3.232050807568877, 
+      5.098076211353316}, {3.732050807568877, 2.232050807568877}, {
+      3.732050807568877, 3.232050807568877}, {3.732050807568877, 
+      4.232050807568877}, {4.098076211353316, 4.598076211353316}, {
+      4.098076211353316, 5.598076211353316}, {4.232050807568877, 
+      1.3660254037844386`}, {4.598076211353316, 1.7320508075688772`}, {
+      4.598076211353316, 2.732050807568877}, {4.598076211353316, 
+      3.732050807568877}, {4.598076211353316, 6.464101615137754}, {
+      5.098076211353316, 0.8660254037844386}, {5.098076211353316, 
+      1.8660254037844386`}, {5.098076211353316, 4.598076211353316}, {
+      5.098076211353316, 5.598076211353316}, {5.598076211353316, 0}, {
+      5.598076211353316, 2.732050807568877}, {5.598076211353316, 
+      3.732050807568877}, {5.598076211353316, 4.732050807568877}, {
+      5.964101615137754, 5.098076211353316}, {6.098076211353316, 
+      0.8660254037844386}, {6.098076211353316, 1.8660254037844386`}, {
+      6.464101615137754, 2.232050807568877}, {6.464101615137754, 
+      3.232050807568877}, {6.464101615137754, 4.232050807568877}, {
+      6.964101615137754, 1.3660254037844386`}, {6.964101615137754, 
+      2.3660254037844384`}, {6.964101615137754, 5.098076211353316}, {
+      7.464101615137754, 3.232050807568877}, {7.464101615137754, 
+      4.232050807568877}, {8.330127018922193, 2.732050807568877}, {
+      8.330127018922193, 3.732050807568877}}], 
+    PolygonBox[{{2, 1, 4}, {1, 3, 4}, {4, 3, 7, 8}, {6, 4, 8}, {3, 5, 7}, {8, 
+      7, 11}, {7, 10, 11}, {9, 8, 12}, {8, 11, 12}, {12, 11, 16, 17}, {14, 12,
+       17}, {11, 13, 16}, {17, 16, 23}, {16, 22, 23}, {18, 17, 24}, {17, 23, 
+      24}, {24, 23, 31, 32}, {28, 24, 32}, {23, 27, 31}, {32, 31, 38}, {31, 
+      37, 38}, {33, 32, 39}, {32, 38, 39}, {39, 38, 43, 44}, {42, 39, 44}, {
+      38, 41, 43}, {44, 43, 46}, {43, 45, 46}, {25, 20, 29}, {15, 19, 20}, {
+      20, 19, 28, 29}, {29, 28, 34}, {19, 24, 28}, {31, 27, 36}, {21, 26, 
+      27}, {27, 26, 35, 36}, {36, 35, 40}, {26, 30, 35}}]]}]], "Output",
+ CellChangeTimes->{3.7590018699081016`*^9}]
+}, Open  ]]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
 },
 ScreenStyleEnvironment->"Numbered",
-WindowSize->{1366, 685},
-WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+WindowSize->{667, 676},
+WindowMargins->{{Automatic, 7}, {Automatic, 0}},
 TaggingRules->{"$testsRun" -> False},
 FrontEndVersion->"11.0 for Microsoft Windows (64-bit) (September 21, 2016)",
 StyleDefinitions->"Default.nb"
@@ -505,65 +2157,219 @@ Notebook[{
 Cell[CellGroupData[{
 Cell[580, 22, 239, 3, 70, "Section"],
 Cell[CellGroupData[{
-Cell[844, 29, 115, 1, 49, "Subsection"],
-Cell[962, 32, 1619, 44, 123, "Code"],
+Cell[844, 29, 116, 1, 49, "Subsection"],
+Cell[963, 32, 502, 8, 106, "Text"],
+Cell[1468, 42, 2536, 70, 159, "Code"],
+Cell[4007, 114, 319, 5, 49, "Text"],
 Cell[CellGroupData[{
-Cell[2606, 80, 124, 1, 39, "Subsubsection"],
-Cell[2733, 83, 648, 20, 69, "Code"],
+Cell[4351, 123, 124, 1, 39, "Subsubsection"],
+Cell[4478, 126, 192, 5, 50, "Code"],
 Cell[CellGroupData[{
-Cell[3406, 107, 862, 16, 105, "Code"],
-Cell[4271, 125, 162, 2, 30, "Output"],
-Cell[4436, 129, 175, 3, 33, "Output"],
-Cell[4614, 134, 173, 3, 33, "Output"]
+Cell[4695, 135, 128, 2, 30, "Input"],
+Cell[4826, 139, 254, 5, 428, "Output"]
 }, Open  ]],
-Cell[4802, 140, 961, 24, 123, "Code"],
 Cell[CellGroupData[{
-Cell[5788, 168, 125, 2, 30, "Input"],
-Cell[5916, 172, 331, 6, 428, "Output"]
+Cell[5117, 149, 178, 3, 30, "Input"],
+Cell[5298, 154, 145, 2, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5480, 161, 149, 2, 30, "Input"],
+Cell[5632, 165, 72, 1, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5741, 171, 65, 1, 30, "Input"],
+Cell[5809, 174, 71, 1, 30, "Output"]
+}, Open  ]],
+Cell[5895, 178, 281, 5, 49, "Text"],
+Cell[6179, 185, 648, 20, 69, "Code"],
+Cell[CellGroupData[{
+Cell[6852, 209, 148, 2, 30, "Input"],
+Cell[7003, 213, 83, 2, 33, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7123, 220, 156, 2, 30, "Input"],
+Cell[7282, 224, 83, 2, 33, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[6296, 184, 98, 1, 39, "Subsubsection"],
-Cell[6397, 187, 395, 8, 50, "Code"],
+Cell[7414, 232, 98, 1, 39, "Subsubsection"],
+Cell[7515, 235, 395, 8, 50, "Code"],
 Cell[CellGroupData[{
-Cell[6817, 199, 183, 3, 30, "Input"],
-Cell[7003, 204, 288, 5, 374, "Output"]
+Cell[7935, 247, 183, 3, 30, "Input"],
+Cell[8121, 252, 288, 5, 374, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8446, 262, 127, 2, 30, "Input"],
+Cell[8576, 266, 96, 1, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8709, 272, 149, 2, 30, "Input"],
+Cell[8861, 276, 94, 1, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8992, 282, 133, 2, 30, "Input"],
+Cell[9128, 286, 73, 1, 30, "Output"]
+}, Open  ]],
+Cell[9216, 290, 350, 10, 50, "Code"],
+Cell[CellGroupData[{
+Cell[9591, 304, 154, 2, 30, "Input"],
+Cell[9748, 308, 96, 1, 30, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[7340, 215, 108, 1, 39, "Subsubsection"],
-Cell[7451, 218, 218, 5, 50, "Code"],
+Cell[9893, 315, 108, 1, 39, "Subsubsection"],
+Cell[10004, 318, 218, 5, 50, "Code"],
 Cell[CellGroupData[{
-Cell[7694, 227, 128, 2, 30, "Input"],
-Cell[7825, 231, 850, 16, 392, "Output"]
+Cell[10247, 327, 128, 2, 30, "Input"],
+Cell[10378, 331, 850, 16, 392, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11265, 352, 129, 2, 30, "Input"],
+Cell[11397, 356, 71, 1, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11505, 362, 147, 2, 30, "Input"],
+Cell[11655, 366, 72, 1, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11764, 372, 133, 2, 30, "Input"],
+Cell[11900, 376, 72, 1, 30, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[8724, 253, 135, 2, 39, "Subsubsection"],
+Cell[12021, 383, 135, 2, 39, "Subsubsection"],
 Cell[CellGroupData[{
-Cell[8884, 259, 1345, 33, 123, "Code"],
-Cell[10232, 294, 2032, 42, 525, "Output"]
+Cell[12181, 389, 1411, 34, 123, "Code"],
+Cell[13595, 425, 2185, 44, 525, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[12313, 342, 213, 3, 39, "Subsubsection"],
-Cell[12529, 347, 93, 1, 30, "Text"],
+Cell[15829, 475, 142, 1, 39, "Subsubsection"],
+Cell[15974, 478, 322, 6, 49, "Text"],
+Cell[16299, 486, 1045, 29, 69, "Code"],
 Cell[CellGroupData[{
-Cell[12647, 352, 779, 18, 50, "Code"],
-Cell[13429, 372, 587, 10, 384, "Output"]
+Cell[17369, 519, 143, 2, 30, "Input"],
+Cell[17515, 523, 126, 3, 51, "Output"]
 }, Open  ]],
-Cell[14031, 385, 87, 1, 30, "Text"],
 Cell[CellGroupData[{
-Cell[14143, 390, 160, 3, 50, "Code"],
-Cell[14306, 395, 106, 2, 406, "Output"]
+Cell[17678, 531, 143, 2, 30, "Input"],
+Cell[17824, 535, 83, 2, 33, "Output"]
 }, Open  ]],
-Cell[14427, 400, 94, 1, 30, "Text"],
 Cell[CellGroupData[{
-Cell[14546, 405, 1933, 53, 123, "Code"],
-Cell[16482, 460, 709, 14, 271, "Output"]
+Cell[17944, 542, 141, 2, 30, "Input"],
+Cell[18088, 546, 210, 7, 74, "Output"]
 }, Open  ]],
-Cell[17206, 477, 91, 1, 30, "Text"],
-Cell[17300, 480, 96, 1, 30, "Text"]
+Cell[CellGroupData[{
+Cell[18335, 558, 140, 2, 30, "Input"],
+Cell[18478, 562, 124, 3, 51, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18639, 570, 145, 2, 30, "Input"],
+Cell[18787, 574, 70, 1, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18894, 580, 143, 2, 30, "Input"],
+Cell[19040, 584, 166, 6, 58, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19267, 597, 106, 1, 49, "Subsection"],
+Cell[19376, 600, 361, 6, 68, "Text"],
+Cell[CellGroupData[{
+Cell[19762, 610, 102, 1, 39, "Subsubsection"],
+Cell[19867, 613, 316, 6, 49, "Text"],
+Cell[CellGroupData[{
+Cell[20208, 623, 779, 18, 50, "Code"],
+Cell[20990, 643, 662, 11, 384, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[21689, 659, 190, 3, 50, "Code"],
+Cell[21882, 664, 540, 10, 328, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[22471, 680, 98, 1, 39, "Subsubsection"],
+Cell[22572, 683, 223, 5, 49, "Text"],
+Cell[CellGroupData[{
+Cell[22820, 692, 160, 3, 50, "Code"],
+Cell[22983, 697, 417, 7, 421, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[23437, 709, 236, 4, 50, "Code"],
+Cell[23676, 715, 445, 8, 288, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[24170, 729, 101, 1, 39, "Subsubsection"],
+Cell[24274, 732, 290, 5, 49, "Text"],
+Cell[CellGroupData[{
+Cell[24589, 741, 1933, 53, 123, "Code"],
+Cell[26525, 796, 781, 14, 271, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[27343, 815, 189, 3, 50, "Code"],
+Cell[27535, 820, 964, 18, 286, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[28548, 844, 102, 1, 39, "Subsubsection"],
+Cell[28653, 847, 335, 6, 68, "Text"],
+Cell[CellGroupData[{
+Cell[29013, 857, 203, 3, 50, "Code"],
+Cell[29219, 862, 3081, 54, 429, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[32337, 921, 215, 4, 50, "Code"],
+Cell[32555, 927, 1850, 31, 193, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[34454, 964, 103, 1, 39, "Subsubsection"],
+Cell[34560, 967, 259, 5, 49, "Text"],
+Cell[CellGroupData[{
+Cell[34844, 976, 125, 2, 50, "Code"],
+Cell[34972, 980, 4463, 78, 376, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[39472, 1063, 164, 3, 50, "Code"],
+Cell[39639, 1068, 6027, 100, 200, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[45715, 1174, 104, 1, 39, "Subsubsection"],
+Cell[CellGroupData[{
+Cell[45844, 1179, 422, 7, 45, "Item"],
+Cell[46269, 1188, 421, 8, 62, "Item"],
+Cell[CellGroupData[{
+Cell[46715, 1200, 373, 6, 75, "Subitem"],
+Cell[47091, 1208, 272, 5, 58, "Subitem"],
+Cell[47366, 1215, 312, 5, 58, "Subitem"]
+}, Open  ]]
+}, Open  ]],
+Cell[47705, 1224, 442, 5, 30, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[48184, 1234, 132, 1, 39, "Subsubsection"],
+Cell[48319, 1237, 239, 4, 49, "Text"],
+Cell[48561, 1243, 180, 2, 29, "Item"],
+Cell[CellGroupData[{
+Cell[48766, 1249, 185, 3, 50, "Code"],
+Cell[48954, 1254, 14587, 248, 402, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[63578, 1507, 278, 6, 50, "Code"],
+Cell[63859, 1515, 21173, 402, 233, "Output"]
+}, Open  ]],
+Cell[85047, 1920, 190, 2, 29, "Item"],
+Cell[CellGroupData[{
+Cell[85262, 1926, 151, 2, 50, "Code"],
+Cell[85416, 1930, 4636, 86, 406, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[90089, 2021, 187, 3, 50, "Code"],
+Cell[90279, 2026, 6318, 106, 297, "Output"]
+}, Open  ]]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
